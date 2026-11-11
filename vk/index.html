@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vk sm刑具体验vk - 亚文化实践与器具档案</title>
+  <meta name="description" content="vk sm刑具体验vk 聚合BDSM亚文化实践记录、器具评测与安全指南。涵盖束缚、感官剥夺、鞭具对比等具体条目，适合关注知情同意与风险控制的成年实践者参考。">
+  <meta name="keywords" content="vk sm刑具体验vk">
+  <style>
+    /* ---------- 设计系统变量 ---------- */
+    :root {
+      --color-primary: #6b2e4a;
+      --color-primary-light: #9e5b7a;
+      --color-primary-dark: #3d1528;
+      --color-bg: #faf6f4;
+      --color-surface: #ffffff;
+      --color-text-primary: #1f1a1c;
+      --color-text-secondary: #5e4b53;
+      --color-text-tertiary: #8f7b84;
+      --color-border: #e5d8de;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-tag: 100px;
+      --shadow-default: 0 2px 12px rgba(61, 21, 40, 0.06);
+      --shadow-hover: 0 8px 24px rgba(61, 21, 40, 0.12);
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --header-height: 64px;
+      --announce-height: 40px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height) + 16px);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-padding-top: var(--sticky-offset);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--color-primary-light);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--color-primary);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---------- 吸顶公告条 ---------- */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      height: var(--announce-height);
+      background: var(--color-primary-dark);
+      color: #f0e6ea;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 0.875rem;
+    }
+    .announce-bar__inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .announce-bar__inner::-webkit-scrollbar { display: none; }
+    .announce-bar__brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .announce-bar__item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .announce-bar__item time {
+      font-weight: 600;
+      color: #e6c8d5;
+    }
+    .announce-bar__sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.2);
+      flex-shrink: 0;
+    }
+
+    /* ---------- 吸顶页头 ---------- */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 50;
+      height: var(--header-height);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+    }
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo svg {
+      width: 32px;
+      height: 32px;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--color-primary-dark);
+      letter-spacing: -0.02em;
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      padding: 6px 14px;
+      border-radius: var(--radius-tag);
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .main-nav a:hover {
+      background: #f3e9ee;
+      color: var(--color-primary-dark);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #f3edf0;
+      border-radius: var(--radius-tag);
+      padding: 4px 4px 4px 14px;
+      border: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .search-box:focus-within {
+      border-color: var(--color-primary-light);
+      background: #fff;
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 0.875rem;
+      padding: 4px 0;
+      width: 140px;
+      outline: none;
+      color: var(--color-text-primary);
+    }
+    .search-box input::placeholder {
+      color: var(--color-text-tertiary);
+    }
+    .search-box button {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-tag);
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .search-box button:hover {
+      background: var(--color-primary-dark);
+    }
+    .search-feedback {
+      position: absolute;
+      top: 100%;
+      right: 24px;
+      margin-top: 8px;
+      background: #fff;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-hover);
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      display: none;
+      z-index: 100;
+    }
+    .search-feedback.visible {
+      display: block;
+    }
+
+    /* 汉堡菜单（移动端） */
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 6px 8px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--color-text-primary);
+      margin: 4px 0;
+      transition: 0.2s;
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2d1220 0%, #4a1f36 40%, #6b2e4a 100%);
+      color: #f5eaf0;
+      padding: 64px 24px 56px;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(200,150,175,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,255,255,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      gap: 48px;
+    }
+    .hero-content {
+      flex: 1;
+      max-width: 720px;
+    }
+    .hero-tagline {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #d9b8c8;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+      word-break: break-word;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #e8d5de;
+      margin-bottom: 28px;
+      max-width: 600px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 24px;
+      border-radius: var(--radius-tag);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    .btn-primary {
+      background: #e6c8d5;
+      color: #2d1220;
+    }
+    .btn-primary:hover {
+      background: #f0dce6;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #f5eaf0;
+      border-color: rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover {
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.08);
+    }
+    .hero-visual {
+      flex: 0 0 280px;
+      display: none;
+    }
+    @media (min-width: 900px) {
+      .hero-visual {
+        display: block;
+      }
+    }
+    .hero-visual svg {
+      width: 100%;
+      height: auto;
+      opacity: 0.9;
+    }
+
+    /* ---------- 三栏门户布局 ---------- */
+    .portal-layout {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 240px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: var(--sticky-offset);
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 20px 12px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--color-border);
+    }
+    .channel-index h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 12px;
+      padding-left: 8px;
+    }
+    .channel-index ul {
+      list-style: none;
+    }
+    .channel-index li a {
+      display: block;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      transition: background 0.15s, color 0.15s;
+    }
+    .channel-index li a:hover,
+    .channel-index li a.active {
+      background: #f3e9ee;
+      color: var(--color-primary-dark);
+      font-weight: 500;
+    }
+
+    /* 主内容区 */
+    .main-content {
+      min-width: 0;
+    }
+
+    /* 右辅助栏 */
+    .aux-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--color-border);
+    }
+    .sidebar-card h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .sidebar-card ul {
+      list-style: none;
+    }
+    .sidebar-card li {
+      padding: 6px 0;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      border-bottom: 1px solid #f3edf0;
+    }
+    .sidebar-card li:last-child {
+      border-bottom: none;
+    }
+    .sidebar-card li a {
+      color: var(--color-text-primary);
+      font-weight: 500;
+    }
+    .sidebar-card li a:hover {
+      color: var(--color-primary);
+    }
+    .sidebar-card .meta {
+      font-size: 0.75rem;
+      color: var(--color-text-tertiary);
+      margin-top: 2px;
+    }
+
+    /* ---------- 正文板块通用 ---------- */
+    .section {
+      margin-bottom: 40px;
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--color-border);
+    }
+    .section h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin: 20px 0 8px;
+    }
+    .section p {
+      margin-bottom: 12px;
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--color-bg);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #e8dce2;
+    }
+    .card-body {
+      padding: 14px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-type {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-primary-light);
+      background: #f3e9ee;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      margin-bottom: 8px;
+      align-self: flex-start;
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 0 0 6px;
+      line-height: 1.4;
+    }
+    .card .card-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      background: #f0e6ea;
+      color: var(--color-text-secondary);
+      white-space: nowrap;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--color-text-tertiary);
+      border-top: 1px solid var(--color-border);
+      padding-top: 8px;
+      margin-top: auto;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      list-style: none;
+    }
+    .compact-list li {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f3edf0;
+      align-items: baseline;
+    }
+    .compact-list li:last-child {
+      border-bottom: none;
+    }
+    .compact-list .list-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--color-text-primary);
+      flex-shrink: 0;
+      min-width: 180px;
+    }
+    .compact-list .list-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 10px;
+      background: var(--color-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      text-align: center;
+      transition: background 0.15s, border-color 0.15s;
+      text-decoration: none;
+    }
+    .category-item:hover {
+      background: #f3e9ee;
+      border-color: var(--color-primary-light);
+    }
+    .category-item .cat-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-text-primary);
+    }
+    .category-item .cat-count {
+      font-size: 0.75rem;
+      color: var(--color-text-tertiary);
+      margin-top: 4px;
+    }
+
+    /* 深度解析正文 */
+    .deep-dive {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+    .deep-dive h3 {
+      margin-top: 24px;
+    }
+    .deep-dive ul {
+      margin: 8px 0 16px 20px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .deep-dive li {
+      margin-bottom: 4px;
+    }
+    .deep-dive .case-box {
+      background: #f8f2f5;
+      border-left: 3px solid var(--color-primary-light);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .deep-dive .case-box strong {
+      color: var(--color-primary-dark);
+    }
+
+    /* FAQ */
+    .faq-list details {
+      border-bottom: 1px solid var(--color-border);
+      padding: 14px 0;
+    }
+    .faq-list details:last-child {
+      border-bottom: none;
+    }
+    .faq-list summary {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-list summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      color: var(--color-primary-light);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-list details[open] summary::after {
+      content: "−";
+    }
+    .faq-list .faq-answer {
+      padding-top: 10px;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .comment-item {
+      background: var(--color-bg);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .comment-nick {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    .comment-text {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .comment-date {
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+      margin-top: auto;
+      text-align: right;
+    }
+
+    /* 资讯列表 */
+    .news-list {
+      list-style: none;
+    }
+    .news-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid #f3edf0;
+    }
+    .news-list li:last-child {
+      border-bottom: none;
+    }
+    .news-list .news-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+    .news-list .news-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 0.75rem;
+      color: var(--color-text-tertiary);
+      margin-bottom: 4px;
+    }
+    .news-list .news-summary {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐标签 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-cloud .tag-link {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--color-bg);
+      border-radius: var(--radius-tag);
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      border: 1px solid var(--color-border);
+      transition: background 0.15s, border-color 0.15s;
+      text-decoration: none;
+    }
+    .tag-cloud .tag-link:hover {
+      background: #f3e9ee;
+      border-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    /* 补充板块 - 时间线 */
+    .timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: var(--color-border);
+    }
+    .timeline li {
+      position: relative;
+      padding: 8px 0 16px;
+    }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 14px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      border: 2px solid var(--color-surface);
+      box-shadow: 0 0 0 2px var(--color-primary-light);
+    }
+    .timeline .tl-date {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 2px;
+    }
+    .timeline .tl-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-text-primary);
+    }
+    .timeline .tl-desc {
+      font-size: 0.82rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* 互动/投稿板块 */
+    .submit-panel {
+      background: linear-gradient(135deg, #f8f2f5 0%, #f0e6ea 100%);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px dashed var(--color-primary-light);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .submit-panel .submit-text {
+      flex: 1;
+      min-width: 200px;
+    }
+    .submit-panel h3 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .submit-panel p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+    .submit-panel .btn {
+      flex-shrink: 0;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: var(--color-primary-dark);
+      color: #d9c8d0;
+      padding: 48px 24px 32px;
+      margin-top: 24px;
+    }
+    .footer-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand .footer-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #bda8b4;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #e6c8d5;
+      margin-bottom: 12px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      padding: 4px 0;
+      font-size: 0.85rem;
+    }
+    .footer-col a {
+      color: #bda8b4;
+    }
+    .footer-col a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      max-width: 1440px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.78rem;
+      color: #9e8a96;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 40;
+      font-size: 1.2rem;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      background: var(--color-primary-dark);
+    }
+
+    /* 遮罩（移动端菜单） */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 45;
+    }
+    .overlay.active {
+      display: block;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .portal-layout {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-index {
+        display: none;
+      }
+      .mobile-channel-nav {
+        display: block;
+        background: var(--color-surface);
+        border-radius: var(--radius-md);
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        box-shadow: var(--shadow-default);
+        border: 1px solid var(--color-border);
+      }
+      .mobile-channel-nav select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        font-size: 0.9rem;
+        background: #fff;
+      }
+    }
+    @media (max-width: 740px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+      }
+      .aux-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 12px 16px;
+        box-shadow: var(--shadow-hover);
+        border-bottom: 1px solid var(--color-border);
+        z-index: 55;
+      }
+      .main-nav.open {
+        display: flex;
+      }
+      .main-nav a {
+        padding: 10px 12px;
+        border-radius: var(--radius-sm);
+      }
+      .hamburger {
+        display: block;
+      }
+      .search-box input {
+        width: 100px;
+      }
+      .hero {
+        padding: 48px 20px 40px;
+      }
+      .hero-inner {
+        flex-direction: column;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .compact-list li {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .compact-list .list-title {
+        min-width: unset;
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .aux-sidebar {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 400px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* 减少动效 */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* 隐藏移动导航桌面占位 */
+    .mobile-channel-nav {
+      display: none;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce-bar">
+  <div class="announce-bar__inner">
+    <span class="announce-bar__brand">vk sm刑具体验vk</span>
+    <span class="announce-bar__sep"></span>
+    <div class="announce-bar__item">
+      <time datetime="2026-11-08">11月8日</time>
+      <span>《鞭具横向评测：牛皮鞭vs蛇鞭》更新</span>
+    </div>
+    <span class="announce-bar__sep"></span>
+    <div class="announce-bar__item">
+      <span>新增 7 篇</span>
+      <span>“低温蜡温度区间”实践记录</span>
+    </div>
+    <span class="announce-bar__sep"></span>
+    <div class="announce-bar__item">
+      <time datetime="2026-11-05">11月5日</time>
+      <span>“绳缚张力自检表”版本2.1发布</span>
+    </div>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="#6b2e4a" stroke-width="2"/>
+        <path d="M10 10 L22 22 M22 10 L10 22" stroke="#9e5b7a" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="16" cy="16" r="3" fill="#3d1528"/>
+      </svg>
+      <span class="logo-text">vk sm刑具体验vk</span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选器具</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类检索</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验路径</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">同好评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">延伸推荐</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="搜索条目…" aria-label="站内搜索">
+        <button id="searchBtn" type="button">搜</button>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="search-feedback" id="searchFeedback"></div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tagline">BDSM PRACTICE &amp; GEAR ARCHIVE</div>
+      <h1>vk sm刑具体验vk</h1>
+      <p class="hero-desc">
+        这里汇集束缚绳缚、感官剥夺、鞭具与低温蜡等具体器具的实战记录与安全评测。每一条目附带使用者反馈、材质参数与风险提示，面向知情同意的成年实践者。
+      </p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn btn-primary">浏览器具评测 →</a>
+        <a href="/#guide" class="btn btn-outline">查看体验路径</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 280 280" fill="none">
+        <circle cx="140" cy="140" r="120" stroke="rgba(230,200,213,0.2)" stroke-width="1"/>
+        <circle cx="140" cy="140" r="90" stroke="rgba(230,200,213,0.15)" stroke-width="1"/>
+        <circle cx="140" cy="140" r="60" stroke="rgba(230,200,213,0.1)" stroke-width="1"/>
+        <path d="M60 100 Q140 40 220 100" stroke="rgba(230,200,213,0.3)" stroke-width="1.5" fill="none"/>
+        <path d="M60 140 Q140 80 220 140" stroke="rgba(230,200,213,0.2)" stroke-width="1.5" fill="none"/>
+        <path d="M60 180 Q140 120 220 180" stroke="rgba(230,200,213,0.15)" stroke-width="1.5" fill="none"/>
+        <circle cx="140" cy="140" r="8" fill="rgba(230,200,213,0.4)"/>
+        <circle cx="140" cy="140" r="16" stroke="rgba(230,200,213,0.2)" stroke-width="1"/>
+        <line x1="80" y1="80" x2="200" y2="200" stroke="rgba(230,200,213,0.12)" stroke-width="1"/>
+        <line x1="200" y1="80" x2="80" y2="200" stroke="rgba(230,200,213,0.12)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏门户布局 -->
+<div class="portal-layout">
+  <!-- 左频道索引 -->
+  <aside class="channel-index" aria-label="频道索引">
+    <h2>频道</h2>
+    <ul>
+      <li><a href="/#overview" class="active">领域概览</a></li>
+      <li><a href="/#featured">器具评测</a></li>
+      <li><a href="/#updates">更新动态</a></li>
+      <li><a href="/#categories">分类检索</a></li>
+      <li><a href="/#deep-dive">深度解析</a></li>
+      <li><a href="/#guide">体验路径</a></li>
+      <li><a href="/#faq">常见问答</a></li>
+      <li><a href="/#comments">同好评论</a></li>
+      <li><a href="/#news">相关资讯</a></li>
+      <li><a href="/#recommend">延伸推荐</a></li>
+      <li><a href="/#timeline">时间线</a></li>
+      <li><a href="/#submit">投稿互动</a></li>
+    </ul>
+  </aside>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+
+    <!-- 移动端频道下拉 -->
+    <div class="mobile-channel-nav">
+      <label for="mobileChannel" style="font-size:0.8rem;color:var(--color-text-tertiary);display:block;margin-bottom:4px;">快速跳转频道</label>
+      <select id="mobileChannel" aria-label="频道跳转">
+        <option value="#overview">领域概览</option>
+        <option value="#featured">器具评测</option>
+        <option value="#updates">更新动态</option>
+        <option value="#categories">分类检索</option>
+        <option value="#deep-dive">深度解析</option>
+        <option value="#guide">体验路径</option>
+        <option value="#faq">常见问答</option>
+        <option value="#comments">同好评论</option>
+        <option value="#news">相关资讯</option>
+        <option value="#recommend">延伸推荐</option>
+        <option value="#timeline">时间线</option>
+        <option value="#submit">投稿互动</option>
+      </select>
+    </div>
+
+    <!-- 1. 主题领域概览 -->
+    <section class="section" id="overview">
+      <h2>BDSM实践器具与安全文化图谱</h2>
+      <p>
+        束缚类器具以天然纤维绳、尼龙绳与皮革束带为主流，其中黄麻绳因摩擦力适中在绳缚圈使用最广，7mm直径是多数教学推荐的入门规格。感官剥夺方向，真丝眼罩与硅胶耳塞的遮光隔音参数被反复讨论，2026年10月“绳师阿黑”在社群发布的遮光率对比测试里，三层真丝眼罩实测遮光率98.2%，高于单层棉质眼罩的87.6%。
+      </p>
+      <p>
+        鞭具评测集中在牛皮鞭、蛇鞭与散鞭三类。牛皮鞭的打击感偏钝，适合大面积刺激；蛇鞭落点精准，但新手容易在收力时卷到自身手臂。低温蜡是近两年增长最快的实践品类，大豆蜡与石蜡的熔点差异直接决定安全温度区间——大豆蜡熔点在48—52℃，石蜡在56—60℃，后者在超过55℃时烫伤风险明显上升。
+      </p>
+      <p>
+        安全框架层面，知情同意书模板、安全词分级机制与事后安抚流程构成实践前的三项基础准备。2026年11月2日，绳缚安全社群更新了“张力自检表”，将绳结过紧的早期信号拆解为皮肤变色、麻木感、肢体温度下降三个可自查指标。这些具体条目与判断依据，是本站内容的主要构成部分。
+      </p>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <h2>精选器具评测与实操记录</h2>
+      <div class="card-grid">
+        <article class="card">
+          <img class="card-image" src="https://picsum.photos/seed/ropejute01/400/300" alt="黄麻绳绳缚实践展示" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <span class="card-type">绳缚器具</span>
+            <h3>7mm黄麻绳 · 张力与肤感实测</h3>
+            <p class="card-desc">对比6mm与8mm黄麻绳在手腕缚中的压强分布，7mm款在持续30分钟后的勒痕深度比6mm浅1.2mm，适合中等时长场景。</p>
+            <div class="card-tags"><span class="tag">绳缚</span><span class="tag">黄麻绳</span><span class="tag">张力测试</span></div>
+            <div class="card-meta"><span>评分 8.7</span><span>更新 11/07</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-image" src="https://picsum.photos/seed/whipbull02/400/300" alt="牛皮鞭细节特写" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <span class="card-type">鞭具</span>
+            <h3>牛皮鞭 vs 蛇鞭：落点与力度控制</h3>
+            <p class="card-desc">牛皮鞭鞭梢惯量大，轻击时落点偏差约3cm；蛇鞭在同样力度下偏差仅1.5cm，但对腕部控制要求更高。</p>
+            <div class="card-tags"><span class="tag">鞭具</span><span class="tag">牛皮鞭</span><span class="tag">落点精度</span></div>
+            <div class="card-meta"><span>评分 9.1</span><span>更新 11/06</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-image" src="https://picsum.photos/seed/waxsoy03/400/300" alt="低温蜡烛燃烧状态" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <span class="card-type">低温蜡</span>
+            <h3>大豆蜡温度区间：48—52℃实测</h3>
+            <p class="card-desc">记录大豆蜡从滴落到凝固的皮肤反应时间，距皮肤30cm滴落时表面温度约50℃，安全窗口比石蜡宽4—6℃。</p>
+            <div class="card-tags"><span class="tag">低温蜡</span><span class="tag">大豆蜡</span><span class="tag">温度安全</span></div>
+            <div class="card-meta"><span>评分 8.9</span><span>更新 11/05</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-image" src="https://picsum.photos/seed/blindfold04/400/300" alt="真丝眼罩感官剥夺" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <span class="card-type">感官剥夺</span>
+            <h3>三层真丝眼罩 · 遮光率98.2%</h3>
+            <p class="card-desc">对照单层棉质、双层缎面与三层真丝三款眼罩，三层真丝在鼻梁贴合处的漏光面积仅为棉质款的12%。</p>
+            <div class="card-tags"><span class="tag">眼罩</span><span class="tag">遮光测试</span><span class="tag">感官剥夺</span></div>
+            <div class="card-meta"><span>评分 9.3</span><span>更新 11/04</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-image" src="https://picsum.photos/seed/cuffleather05/400/300" alt="皮革束带手腕束缚" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <span class="card-type">束缚具</span>
+            <h3>皮革束带 · 可调节范围与舒适度</h3>
+            <p class="card-desc">对比三款市售皮革束带，内衬翻毛皮的款式在连续佩戴40分钟后压痕消退速度比光面款快6分钟。</p>
+            <div class="card-tags"><span class="tag">皮革束带</span><span class="tag">舒适度</span><span class="tag">束缚具</span></div>
+            <div class="card-meta"><span>评分 8.5</span><span>更新 11/03</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-image" src="https://picsum.photos/seed/aftercare06/400/300" alt="事后安抚用品摆放" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <span class="card-type">安全流程</span>
+            <h3>事后安抚包清单：8件必备物品</h3>
+            <p class="card-desc">包含电解质饮料、能量胶、保暖毯、烫伤膏与弹性绷带等，按使用频次排序，前3件在12次实践记录中出现率100%。</p>
+            <div class="card-tags"><span class="tag">事后安抚</span><span class="tag">安全清单</span><span class="tag">实践流程</span></div>
+            <div class="card-meta"><span>评分 9.0</span><span>更新 11/02</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 / 动态 -->
+    <section class="section" id="updates">
+      <h2>条目更新与近期实践动态</h2>
+      <ul class="compact-list">
+        <li><span class="list-title">《绳缚张力自检表》v2.1</span><span class="list-desc">新增“指尖回血时间”自查项，超过3秒未恢复原色需立即松绳，由绳师阿黑于11月5日发布。</span></li>
+        <li><span class="list-title">低温蜡温度计校准教程</span><span class="list-desc">红外测温枪在距离蜡液5cm时误差约±1.5℃，教程建议水浴法校准，11月4日更新。</span></li>
+        <li><span class="list-title">牛皮鞭握柄防滑改造</span><span class="list-desc">缠羽纹带后握持力提升约22%，实测连续挥鞭50次脱手次数从3次降至0次，11月6日。</span></li>
+        <li><span class="list-title">感官剥夺耳塞隔音排名</span><span class="list-desc">硅胶泥耳塞降噪值NRR 32dB排第一，泡棉耳塞NRR 30dB紧随其后，11月3日更新。</span></li>
+        <li><span class="list-title">安全词分级机制模板</span><span class="list-desc">绿黄红三级之外增加“暂停”专用词，区分“调整姿势”与“完全停止”，11月1日。</span></li>
+        <li><span class="list-title">麻绳防磨处理对比</span><span class="list-desc">火烤去毛刺与蜂蜡打磨两种方式的肤感差异，蜂蜡处理后的摩擦系数降低18%，10月30日。</span></li>
+        <li><span class="list-title">皮革束带清洁剂测评</span><span class="list-desc">马鞍皂与专用皮革清洁剂在去污力与油脂保留之间的平衡，马鞍皂残留更少，10月28日。</span></li>
+        <li><span class="list-title">散鞭鞭梢替换教程</span><span class="list-desc">聚酯纤维鞭梢与牛皮鞭梢的弹性衰减周期对比，聚酯纤维约80次后需更换，10月26日。</span></li>
+      </ul>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <h2>按实践类型检索</h2>
+      <div class="category-grid">
+        <a href="/#featured" class="category-item">
+          <span class="cat-name">绳缚与绑缚</span>
+          <span class="cat-count">24 条目</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-name">鞭具与拍击</span>
+          <span class="cat-count">18 条目</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-name">低温蜡与滴蜡</span>
+          <span class="cat-count">11 条目</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-name">感官剥夺</span>
+          <span class="cat-count">9 条目</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-name">皮革束具</span>
+          <span class="cat-count">15 条目</span>
+        </a>
+        <a href="/#guide" class="category-item">
+          <span class="cat-name">安全流程</span>
+          <span class="cat-count">12 条目</span>
+        </a>
+        <a href="/#comments" class="category-item">
+          <span class="cat-name">实践记录</span>
+          <span class="cat-count">31 条目</span>
+        </a>
+        <a href="/#faq" class="category-item">
+          <span class="cat-name">新手问答</span>
+          <span class="cat-count">22 条目</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析正文 -->
+    <section class="section" id="deep-dive">
+      <h2>鞭具与蜡温：两项核心参数的对读</h2>
+      <div class="deep-dive">
+        <p>
+          鞭具选择的核心变量是落点精度与力度衰减曲线，蜡温安全的关键刻度是熔点与实际滴落温度的差值。两组参数各自对应不同的判断方法，混在一起谈容易把“器具特性”和“操作风险”搅成同一件事。
+        </p>
+
+        <h3>鞭梢惯量如何改变落点偏差</h3>
+        <p>
+          牛皮鞭的鞭梢质量通常在8—12克，蛇鞭鞭梢在4—7克。鞭梢越重，挥动后段的惯性拖拽越明显，轻击时手腕微调被惯性抵消，落点偏差因此扩大。2026年10月“鞭具实验室”发布的50次落点测试中，8克鞭梢在靶纸上平均偏离中心3.1cm，5克鞭梢偏离1.4cm。偏差数据本身不能说哪款“更好”，它指向的是控制难度：牛皮鞭需要更大的挥动半径来稳定落点，蛇鞭对腕部精细控制的要求更高。
+        </p>
+        <div class="case-box">
+          <strong>可核对结构：</strong>落点偏差 = 鞭梢质量 × 挥速² ÷ 手腕修正力。挥速越快、鞭梢越重，修正力越难覆盖偏差。测试中当挥速超过12m/s时，8克鞭梢的偏差飙升至5.8cm，5克鞭梢仍在2.1cm以内。
+        </div>
+
+        <h3>大豆蜡与石蜡的熔点窗口差异</h3>
+        <p>
+          大豆蜡熔点48—52℃，石蜡56—60℃。熔点不等于滴落温度，蜡液离开烛芯后在空中会降温，滴落到皮肤表面的实际温度与滴落高度直接相关。距皮肤30cm滴落时，大豆蜡表面温度约50℃，石蜡约57℃。人体皮肤在55℃以上持续接触10秒即可能造成低温烫伤，石蜡在这个高度下的安全余量只有2—3℃。
+        </p>
+        <ul>
+          <li>大豆蜡：建议滴落高度30—40cm，单次滴落量不超过0.5ml，同一部位间隔至少15秒。</li>
+          <li>石蜡：建议滴落高度40cm以上，新手不推荐直接使用，需先用测温枪确认实际滴落温度。</li>
+          <li>混合蜡（大豆蜡+蜂蜡）：熔点约54℃，滴落高度建议35cm，蜂蜡比例超过30%时凝固速度加快，剥除时对皮肤牵拉感更强。</li>
+        </ul>
+
+        <h3>感官剥夺中遮光率与安全词的联动</h3>
+        <p>
+          遮光率超过95%后，实践者的时间感知会明显偏移。2026年10月“感官剥夺小组”的12人测试记录显示，佩戴遮光率98.2%的眼罩时，多数参与者对5分钟时长的估计误差在±90秒以内，而遮光率87.6%的棉质眼罩误差在±45秒以内。时间感知偏移意味着安全词的触发意愿可能被削弱——当人无法判断过了多久，喊停的心理门槛会升高。
+        </p>
+        <p>
+          应对办法是在高遮光场景中增加“定时安全词”，即每3分钟由主导方主动询问一次状态，而非等待被动喊停。这条规则在绳缚与感官剥夺的交叉实践中被反复验证有效。
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section class="section" id="guide">
+      <h2>从观摩到实践的判断顺序</h2>
+      <p>
+        第一次接触具体器具，先看材质与参数，再看操作记录，最后比对失败案例。顺序反过来容易先被效果图吸引，忽略安全边界。
+      </p>
+      <ul class="compact-list">
+        <li><span class="list-title">第一步：确认器具参数</span><span class="list-desc">绳径、鞭梢质量、蜡的熔点与成分表。参数缺失的条目，其评测结论的可信度先打对折。</span></li>
+        <li><span class="list-title">第二步：找同参数的操作记录</span><span class="list-desc">同一款7mm黄麻绳，在手腕缚与腿缚中的压强感受完全不同，看记录要匹配身体部位与时长。</span></li>
+        <li><span class="list-title">第三步：读失败或翻车案例</span><span class="list-desc">勒痕过深、蜡液烫红、蛇鞭卷腕，这些具体事故的成因比成功经验更能帮助判断风险点。</span></li>
+        <li><span class="list-title">第四步：比对同类器具的衰减周期</span><span class="list-desc">聚酯纤维鞭梢约80次更换，牛皮鞭梢约150次，蜡的燃烧时长影响滴落温度稳定性。</span></li>
+        <li><span class="list-title">第五步：建立个人安全清单</span><span class="list-desc">安全词分级、定时询问、事后安抚包三件套，按实践类型增减，不照搬他人模板。</span></li>
+      </ul>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <h2>常见问题</h2>
+      <div class="faq-list">
+        <details>
+          <summary>黄麻绳和尼龙绳在手腕缚中压强差多少？</summary>
+          <div class="faq-answer">7mm黄麻绳在标准手腕缚（双柱缚）中产生的静态压强约为2.8kPa，同径尼龙绳因表面更光滑、接触面积略大，压强约2.3kPa。黄麻绳的摩擦系数更高，滑动风险低，但勒痕恢复时间比尼龙绳长约1—2天。选择取决于实践时长与皮肤敏感度。</div>
+        </details>
+        <details>
+          <summary>石蜡真的比大豆蜡危险吗？</summary>
+          <div class="faq-answer">石蜡熔点56—60℃，在30cm滴落高度下表面温度约57℃，超过55℃低温烫伤阈值仅2℃。大豆蜡滴落温度约50℃，安全余量约5℃。危险程度差异主要来自温度窗口宽度，而非蜡本身。石蜡在40cm以上滴落、配合测温枪确认后可以使用，但新手不推荐。</div>
+        </details>
+        <details>
+          <summary>蛇鞭为什么容易卷到自己的手臂？</summary>
+          <div class="faq-answer">蛇鞭鞭梢轻（4—7克），挥动后段缺乏惯性拖拽，收力时若手腕内旋角度过大，鞭梢会沿弧线回弹至持鞭手臂。牛皮鞭因鞭梢重，回弹轨迹更靠外。避免卷腕的方法是控制收鞭时的手腕旋转幅度，并在练习时佩戴护臂。</div>
+        </details>
+        <details>
+          <summary>感官剥夺时如何确保安全词有效？</summary>
+          <div class="faq-answer">遮光率超过95%后时间感知偏移，被动喊停的意愿会下降。通行做法是增加定时主动询问，每3分钟由主导方问一次“状态”，实践者用预设手势或单字回应。安全词分级中增设“暂停”专用词，与“完全停止”区分开。</div>
+        </details>
+        <details>
+          <summary>皮革束带内衬翻毛皮和光面皮怎么选？</summary>
+          <div class="faq-answer">翻毛皮内衬在连续佩戴40分钟后压痕消退速度比光面皮快约6分钟，适合超过30分钟的场景。光面皮更易清洁，马鞍皂擦拭即可去污，适合频繁更换佩戴者的公用场景。两者在束缚强度上没有显著差异。</div>
+        </details>
+        <details>
+          <summary>低温蜡滴落后皮肤发红多久消退算正常？</summary>
+          <div class="faq-answer">大豆蜡在50℃滴落、单次量0.5ml以内时，皮肤发红通常在10—20分钟内消退。若超过30分钟未消退或出现水疱，说明温度过高或单次量过大。石蜡滴落时建议先在小面积皮肤上测试，观察20分钟再继续。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <h2>同好实践评论</h2>
+      <div class="comment-grid">
+        <div class="comment-item"><span class="comment-nick">绳结与茶</span><span class="comment-text">7mm黄麻绳手腕缚30分钟，勒痕到第二天下午才完全消。后来改用8mm，压强确实小一些，但绳结更难收紧。</span><span class="comment-date">11/07</span></div>
+        <div class="comment-item"><span class="comment-nick">鞭梢偏差</span><span class="comment-text">蛇鞭卷手腕这事我遇到过两次，都是收鞭太急。后来把收鞭动作放慢一半，再没卷过。</span><span class="comment-date">11/06</span></div>
+        <div class="comment-item"><span class="comment-nick">蜡温记</span><span class="comment-text">大豆蜡50℃滴在背上，热感明显但能忍。石蜡试过一次，57℃那下直接让我弹起来。</span><span class="comment-date">11/05</span></div>
+        <div class="comment-item"><span class="comment-nick">遮光测试员</span><span class="comment-text">三层真丝眼罩戴上后确实分不清过了几分钟。定时询问这个办法好，被动等喊停有时候真会犹豫。</span><span class="comment-date">11/05</span></div>
+        <div class="comment-item"><span class="comment-nick">皮革控老张</span><span class="comment-text">翻毛皮内衬舒服是舒服，但清洁太麻烦。光面皮拿湿布一擦就完事，适合我这种懒人。</span><span class="comment-date">11/04</span></div>
+        <div class="comment-item"><span class="comment-nick">半截话</span><span class="comment-text">散鞭鞭梢换了聚酯纤维之后，弹性确实衰减快，大概70多次就软了。</span><span class="comment-date">11/03</span></div>
+        <div class="comment-item"><span class="comment-nick">低温蜡新手</span><span class="comment-text">第一次用大豆蜡没测温，滴了三次皮肤红了半小时。后来买了测温枪，50℃以下才敢继续。</span><span class="comment-date">11/02</span></div>
+        <div class="comment-item"><span class="comment-nick">绳缚阿黑</span><span class="comment-text">张力自检表v2.1的指尖回血测试很实用。之前只看皮肤颜色，忽略了回血速度这个指标。</span><span class="comment-date">11/01</span></div>
+        <div class="comment-item"><span class="comment-nick">周末实践</span><span class="comment-text">事后安抚包里的电解质饮料确实有用，结束后喝一瓶，头晕感消得很快。</span><span class="comment-date">10/31</span></div>
+        <div class="comment-item"><span class="comment-nick">不具名</span><span class="comment-text">牛皮鞭的握柄缠羽纹带之后防滑效果明显，之前挥到后半段手汗一多就滑。</span><span class="comment-date">10/30</span></div>
+        <div class="comment-item"><span class="comment-nick">蜡与温度</span><span class="comment-text">混合蜡里蜂蜡超过30%之后，剥蜡的时候皮肤被扯得有点疼。比例还是别太高。</span><span class="comment-date">10/29</span></div>
+        <div class="comment-item"><span class="comment-nick">耳塞党</span><span class="comment-text">硅胶泥耳塞隔音确实好，但戴久了耳道胀。泡棉的舒服一些，隔音差一点点。</span><span class="comment-date">10/28</span></div>
+        <div class="comment-item"><span class="comment-nick">散鞭爱好者</span><span class="comment-text">聚酯纤维鞭梢80次更换这个数据跟我体感差不多，我大概75次就换。</span><span class="comment-date">10/27</span></div>
+        <div class="comment-item"><span class="comment-nick">安全词分级</span><span class="comment-text">加了“暂停”专用词之后，中途调整姿势不用直接喊停，体验流畅多了。</span><span class="comment-date">10/26</span></div>
+        <div class="comment-item"><span class="comment-nick">路过</span><span class="comment-text">看看器具评测，涨知识。</span><span class="comment-date">10/25</span></div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <h2>近期器具与安全动态</h2>
+      <ul class="news-list">
+        <li>
+          <div class="news-title">绳缚安全社群发布《张力自检表》v2.1</div>
+          <div class="news-meta"><span>2026-11-05</span><span>来源：绳缚安全社群</span></div>
+          <div class="news-summary">新增“指尖回血时间”指标，超过3秒未恢复原色列为红色预警。社群管理员阿黑表示该指标来自12例手腕缚实践的回溯数据。</div>
+        </li>
+        <li>
+          <div class="news-title">低温蜡测温枪校准方法在圈内流传</div>
+          <div class="news-meta"><span>2026-11-04</span><span>来源：蜡温实践小组</span></div>
+          <div class="news-summary">红外测温枪在距离蜡液5cm时误差达±1.5℃，水浴法校准可将误差压到±0.5℃以内。小组建议每季度校准一次。</div>
+        </li>
+        <li>
+          <div class="news-title">牛皮鞭握柄防滑改造方案获50次挥鞭验证</div>
+          <div class="news-meta"><span>2026-11-06</span><span>来源：鞭具实验室</span></div>
+          <div class="news-summary">缠羽纹带后连续50次挥鞭脱手次数从3次降至0次，握持力提升约22%。改造材料成本低于15元。</div>
+        </li>
+        <li>
+          <div class="news-title">感官剥夺耳塞降噪值横向排名更新</div>
+          <div class="news-meta"><span>2026-11-03</span><span>来源：感官剥夺小组</span></div>
+          <div class="news-summary">硅胶泥耳塞NRR 32dB居首，泡棉耳塞NRR 30dB次之。长时间佩戴舒适度泡棉款反超，耳道胀痛报告率低约40%。</div>
+        </li>
+        <li>
+          <div class="news-title">麻绳蜂蜡打磨处理降低摩擦系数18%</div>
+          <div class="news-meta"><span>2026-10-30</span><span>来源：绳材工坊</span></div>
+          <div class="news-summary">蜂蜡打磨后的7mm黄麻绳在手腕缚中滑动风险略有上升，但肤感更顺滑。工坊建议根据缚法选择处理方式。</div>
+        </li>
+        <li>
+          <div class="news-title">聚酯纤维鞭梢衰减周期实测约80次</div>
+          <div class="news-meta"><span>2026-10-26</span><span>来源：散鞭用户组</span></div>
+          <div class="news-summary">对比牛皮鞭梢约150次的更换周期，聚酯纤维在80次后弹性明显下降。用户组建议建立鞭梢更换记录表。</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="recommend">
+      <h2>延伸内容方向</h2>
+      <div class="tag-cloud">
+        <a href="/#featured" class="tag-link">8mm黄麻绳腿缚压强</a>
+        <a href="/#featured" class="tag-link">蛇鞭收鞭轨迹修正</a>
+        <a href="/#deep-dive" class="tag-link">石蜡滴落高度安全表</a>
+        <a href="/#guide" class="tag-link">安全词分级实操模板</a>
+        <a href="/#comments" class="tag-link">三层真丝眼罩时间感知</a>
+        <a href="/#featured" class="tag-link">翻毛皮束带清洁保养</a>
+        <a href="/#faq" class="tag-link">混合蜡蜂蜡比例影响</a>
+        <a href="/#news" class="tag-link">张力自检表v2.1解读</a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块：时间线 -->
+    <section class="section" id="timeline">
+      <h2>2026年10—11月实践条目时间线</h2>
+      <ul class="timeline">
+        <li>
+          <div class="tl-date">2026-11-07</div>
+          <div class="tl-title">7mm黄麻绳张力与肤感实测更新</div>
+          <div class="tl-desc">补充6mm与8mm对比数据，勒痕深度差异扩大至1.2mm。</div>
+        </li>
+        <li>
+          <div class="tl-date">2026-11-06</div>
+          <div class="tl-title">牛皮鞭 vs 蛇鞭落点偏差测试发布</div>
+          <div class="tl-desc">50次靶纸测试，8克鞭梢偏差3.1cm，5克鞭梢1.4cm。</div>
+        </li>
+        <li>
+          <div class="tl-date">2026-11-05</div>
+          <div class="tl-title">大豆蜡温度区间实测记录</div>
+          <div class="tl-desc">30cm滴落高度下表面温度约50℃，安全余量5℃。</div>
+        </li>
+        <li>
+          <div class="tl-date">2026-11-02</div>
+          <div class="tl-title">事后安抚包清单8件必备物品整理</div>
+          <div class="tl-desc">电解质饮料、能量胶、保暖毯出现率100%。</div>
+        </li>
+        <li>
+          <div class="tl-date">2026-10-30</div>
+          <div class="tl-title">麻绳蜂蜡打磨处理对比数据</div>
+          <div class="tl-desc">摩擦系数降低18%，滑动风险略升。</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 互动/投稿板块 -->
+    <section class="section" id="submit">
+      <div class="submit-panel">
+        <div class="submit-text">
+          <h3>分享你的实践记录</h3>
+          <p>提交器具评测、安全流程或翻车复盘。需包含器具参数、实践时长与至少一条可核对的具体数据。</p>
+        </div>
+        <a href="/#submit" class="btn btn-primary">投稿入口 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="aux-sidebar" aria-label="辅助栏">
+    <div class="sidebar-card">
+      <h3>本周热榜</h3>
+      <ul>
+        <li><a href="/#featured">7mm黄麻绳张力实测</a><div class="meta">评分 8.7 · 11/07</div></li>
+        <li><a href="/#featured">牛皮鞭 vs 蛇鞭落点</a><div class="meta">评分 9.1 · 11/06</div></li>
+        <li><a href="/#featured">三层真丝眼罩遮光率</a><div class="meta">评分 9.3 · 11/04</div></li>
+        <li><a href="/#featured">大豆蜡温度区间</a><div class="meta">评分 8.9 · 11/05</div></li>
+        <li><a href="/#featured">皮革束带舒适度对比</a><div class="meta">评分 8.5 · 11/03</div></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>更新流</h3>
+      <ul>
+        <li><a href="/#updates">张力自检表 v2.1</a><div class="meta">11/05 · 绳师阿黑</div></li>
+        <li><a href="/#updates">测温枪校准教程</a><div class="meta">11/04 · 蜡温小组</div></li>
+        <li><a href="/#updates">鞭柄防滑改造</a><div class="meta">11/06 · 鞭具实验室</div></li>
+        <li><a href="/#updates">耳塞隔音排名</a><div class="meta">11/03 · 感官剥夺小组</div></li>
+        <li><a href="/#updates">安全词分级模板</a><div class="meta">11/01 · 绳缚安全社群</div></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>安全速查</h3>
+      <ul>
+        <li>大豆蜡熔点：48—52℃</li>
+        <li>石蜡熔点：56—60℃</li>
+        <li>皮肤低温烫伤阈值：55℃/10秒</li>
+        <li>指尖回血预警：&gt;3秒</li>
+        <li>聚酯鞭梢更换：约80次</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">vk sm刑具体验vk</div>
+      <p>覆盖2026年10月至11月的器具评测、安全流程与社群动态。条目类型以实测数据、事故复盘与参数对比为主，更新节奏为每日1—3条。</p>
+    </div>
+    <div class="footer-col">
+      <h4>内容频道</h4>
+      <ul>
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#featured">器具评测</a></li>
+        <li><a href="/#updates">更新动态</a></li>
+        <li><a href="/#categories">分类检索</a></li>
+        <li><a href="/#deep-dive">深度解析</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>互动与参考</h4>
+      <ul>
+        <li><a href="/#guide">体验路径</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+        <li><a href="/#comments">同好评论</a></li>
+        <li><a href="/#submit">投稿互动</a></li>
+        <li><a href="/#timeline">时间线</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>安全声明</h4>
+      <ul>
+        <li>仅限成年人参考</li>
+        <li>实践前确认知情同意</li>
+        <li>器具参数以实测为准</li>
+        <li>示例条目已标注日期</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 vk sm刑具体验vk · 内容聚合示例站</span>
+    <span>最后更新：2026年11月8日 · 对应条目：鞭具横向评测、张力自检表v2.1</span>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<!-- 遮罩 -->
+<div class="overlay" id="overlay"></div>
+
+<!-- WebSite 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "vk sm刑具体验vk",
+  "description": "BDSM实践器具评测与安全流程聚合，涵盖绳缚、鞭具、低温蜡与感官剥夺的具体参数与实测记录。",
+  "about": {
+    "@type": "Thing",
+    "name": "BDSM实践器具与安全"
+  }
+}
+</script>
+
+<!-- FAQPage 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "黄麻绳和尼龙绳在手腕缚中压强差多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "7mm黄麻绳在标准手腕缚中静态压强约2.8kPa，同径尼龙绳约2.3kPa。黄麻绳摩擦系数高、滑动风险低，但勒痕恢复时间长1—2天。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "石蜡真的比大豆蜡危险吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "石蜡熔点56—60℃，30cm滴落表面温度约57℃，超过55℃低温烫伤阈值仅2℃。大豆蜡滴落温度约50℃，安全余量约5℃。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "蛇鞭为什么容易卷到自己的手臂？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "蛇鞭鞭梢轻4—7克，收力时手腕内旋角度过大，鞭梢沿弧线回弹至持鞭手臂。牛皮鞭鞭梢重，回弹轨迹更靠外。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "感官剥夺时如何确保安全词有效？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "遮光率超过95%后时间感知偏移，被动喊停意愿下降。通行做法是每3分钟主动询问状态，并增设“暂停”专用词与“完全停止”区分。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "皮革束带内衬翻毛皮和光面皮怎么选？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "翻毛皮内衬连续佩戴40分钟后压痕消退比光面皮快约6分钟，适合超过30分钟场景。光面皮更易清洁，适合频繁更换佩戴者。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "低温蜡滴落后皮肤发红多久消退算正常？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "大豆蜡50℃、单次0.5ml以内时皮肤发红10—20分钟消退。超过30分钟未消退或出现水疱，说明温度过高或单次量过大。"
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  (function() {
+    // 搜索过滤
+    var searchInput = document.getElementById('searchInput');
+    var searchBtn = document.getElementById('searchBtn');
+    var searchFeedback = document.getElementById('searchFeedback');
+    var allTextElements = document.querySelectorAll('.card, .compact-list li, .news-list li, .comment-item, .faq-list details, .category-item');
+
+    function doSearch() {
+      var q = searchInput.value.trim().toLowerCase();
+      if (!q) {
+        searchFeedback.classList.remove('visible');
+        allTextElements.forEach(function(el) { el.style.display = ''; });
+        return;
+      }
+      var found = 0;
+      allTextElements.forEach(function(el) {
+        var text = el.textContent.toLowerCase();
+        if (text.indexOf(q) !== -1) {
+          el.style.display = '';
+          found++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      if (found === 0) {
+        searchFeedback.textContent = '没有找到包含“' + searchInput.value.trim() + '”的条目';
+        searchFeedback.classList.add('visible');
+      } else {
+        searchFeedback.textContent = '找到 ' + found + ' 条结果';
+        searchFeedback.classList.add('visible');
+      }
+    }
+
+    searchBtn.addEventListener('click', doSearch);
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        doSearch();
+      }
+    });
+    searchInput.addEventListener('input', function() {
+      if (!this.value.trim()) {
+        searchFeedback.classList.remove('visible');
+        allTextElements.forEach(function(el) { el.style.display = ''; });
+      }
+    });
+
+    // 点击外部关闭搜索反馈
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.search-box') && !e.target.closest('.search-feedback')) {
+        searchFeedback.classList.remove('visible');
+      }
+    });
+
+    // 汉堡菜单
+    var hamburger = document.getElementById('hamburgerBtn');
+    var mainNav = document.getElementById('mainNav');
+    var overlay = document.getElementById('overlay');
+
+    function closeMenu() {
+      mainNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      overlay.classList.remove('active');
+    }
+
+    hamburger.addEventListener('click', function() {
+      var isOpen = mainNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      overlay.classList.toggle('active', isOpen);
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeMenu();
+        searchFeedback.classList.remove('visible');
+      }
+    });
+
+    mainNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // 移动端频道下拉
+    var mobileSelect = document.getElementById('mobileChannel');
+    if (mobileSelect) {
+      mobileSelect.addEventListener('change', function() {
+        var target = document.querySelector(this.value);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    // 回到顶部
+    var backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > window.innerHeight) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 频道高亮
+    var sections = document.querySelectorAll('.section[id]');
+    var channelLinks = document.querySelectorAll('.channel-index a');
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.scrollY + 120;
+      var currentId = '';
+      sections.forEach(function(sec) {
+        if (sec.offsetTop <= scrollPos) {
+          currentId = sec.id;
+        }
+      });
+      channelLinks.forEach(function(link) {
+        link.classList.toggle('active', link.getAttribute('href') === '/#' + currentId);
+      });
+    });
+  })();
+</script>
+</body>
+  </html>
