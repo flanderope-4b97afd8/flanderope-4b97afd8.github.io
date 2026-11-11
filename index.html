@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91含羞草实验所 - 植物感官实验内容聚合</title>
+<meta name="description" content="91含羞草实验所汇集含羞草闭合实验、植物电信号观测、向触性延时摄影与校园自然课案例。收录叶枕电位记录、触碰阈值对照、感震运动影像与养护观测日志，适合植物生理爱好者与自然教育从业者查阅。">
+<meta name="keywords" content="91含羞草实验所">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5c3d'/%3E%3Cpath d='M32 52V30M32 30C32 30 18 28 16 16c12 0 16 8 16 14zM32 34c0 0 14-2 16-14-12 0-16 8-16 14z' fill='none' stroke='%23c8f0a8' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --green-900:#163d29;
+  --green-700:#1f5c3d;
+  --green-500:#2f8c5c;
+  --green-300:#7fc8a1;
+  --green-100:#e3f4e9;
+  --mint:#c8f0a8;
+  --amber:#d98324;
+  --amber-soft:#fbeed8;
+  --bg:#f5f8f4;
+  --panel:#ffffff;
+  --ink-1:#1b2620;
+  --ink-2:#3d4d44;
+  --ink-3:#6b7d72;
+  --line:#dbe6de;
+  --radius-card:14px;
+  --radius-btn:9px;
+  --radius-tag:6px;
+  --radius-banner:18px;
+  --shadow-1:0 1px 2px rgba(22,61,41,.06),0 4px 14px rgba(22,61,41,.05);
+  --shadow-2:0 4px 10px rgba(22,61,41,.09),0 12px 28px rgba(22,61,41,.10);
+  --announce-h:38px;
+  --header-h:64px;
+  --offset:calc(var(--announce-h) + var(--header-h) + 12px);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink-1);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700;}
+p{margin:0 0 .8em;}
+ul,ol{margin:0 0 .8em;padding-left:1.2em;}
+li{margin-bottom:.35em;}
+button{font-family:inherit;}
+:focus-visible{outline:3px solid var(--green-500);outline-offset:2px;border-radius:4px;}
+section[id],div[id]{scroll-margin-top:var(--offset);}
+
+/* ---------- 吸顶公告条 + 页头 ---------- */
+.sticky-top{position:sticky;top:0;z-index:80;}
+.announce{
+  height:var(--announce-h);
+  background:var(--green-900);
+  color:#e9f6ee;
+  display:flex;align-items:center;
+  overflow:hidden;
+  font-size:13px;
+}
+.announce-inner{
+  max-width:1340px;margin:0 auto;width:100%;padding:0 20px;
+  display:flex;align-items:center;gap:18px;white-space:nowrap;
+}
+.announce-brand{font-weight:700;color:var(--mint);letter-spacing:.5px;flex:none;}
+.announce-list{display:flex;gap:22px;overflow:hidden;mask-image:linear-gradient(90deg,#000 92%,transparent);}
+.announce-item{display:flex;align-items:center;gap:8px;color:#cfe6d8;}
+.announce-item b{color:#fff;font-weight:600;}
+.announce-item time{color:var(--green-300);font-variant-numeric:tabular-nums;}
+.announce-item .dot{width:5px;height:5px;border-radius:50%;background:var(--amber);flex:none;}
+
+.site-header{
+  height:var(--header-h);
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1340px;margin:0 auto;height:100%;padding:0 20px;
+  display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex:none;}
+.logo svg{width:34px;height:34px;flex:none;}
+.logo-text{font-size:17px;font-weight:800;color:var(--green-900);letter-spacing:.3px;}
+.main-nav{display:flex;gap:4px;flex:1;overflow:visible;}
+.main-nav a{
+  padding:7px 11px;border-radius:var(--radius-btn);
+  font-size:14px;color:var(--ink-2);
+  transition:background .18s,color .18s;white-space:nowrap;
+}
+.main-nav a:hover{background:var(--green-100);color:var(--green-900);}
+.main-nav a.active{background:var(--green-100);color:var(--green-900);font-weight:600;}
+.header-actions{display:flex;align-items:center;gap:10px;flex:none;}
+.search-wrap{position:relative;}
+.search-box{
+  display:flex;align-items:center;gap:6px;
+  border:1px solid var(--line);background:#fff;border-radius:var(--radius-btn);
+  padding:5px 8px 5px 10px;
+}
+.search-box input{
+  border:0;outline:none;background:transparent;width:132px;
+  font-size:13.5px;color:var(--ink-1);padding:2px 0;
+}
+.search-box input::placeholder{color:var(--ink-3);}
+.search-box button{
+  border:0;background:var(--green-700);color:#fff;border-radius:6px;
+  padding:4px 10px;font-size:13px;cursor:pointer;
+}
+.search-box button:hover{background:var(--green-900);}
+.search-result{
+  position:absolute;right:0;top:calc(100% + 8px);width:320px;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow-2);padding:8px;display:none;z-index:90;
+  max-height:340px;overflow:auto;
+}
+.search-result.open{display:block;}
+.search-result .sr-title{font-size:12px;color:var(--ink-3);padding:4px 8px 6px;}
+.search-result a{display:block;padding:7px 8px;border-radius:7px;font-size:13.5px;}
+.search-result a:hover{background:var(--green-100);}
+.search-result .sr-empty{padding:14px 8px;font-size:13px;color:var(--ink-3);}
+.btn-ghost{
+  border:1px solid var(--line);background:#fff;color:var(--green-900);
+  padding:6px 13px;border-radius:var(--radius-btn);font-size:13.5px;cursor:pointer;
+  transition:background .18s,border-color .18s;
+}
+.btn-ghost:hover{background:var(--green-100);border-color:var(--green-300);}
+.hamburger{
+  display:none;border:1px solid var(--line);background:#fff;border-radius:8px;
+  width:38px;height:34px;align-items:center;justify-content:center;cursor:pointer;
+}
+.hamburger span{display:block;width:17px;height:2px;background:var(--green-900);position:relative;}
+.hamburger span::before,.hamburger span::after{
+  content:"";position:absolute;left:0;width:17px;height:2px;background:var(--green-900);
+}
+.hamburger span::before{top:-5px;}
+.hamburger span::after{top:5px;}
+
+.mobile-drawer{
+  position:fixed;inset:0;z-index:120;display:none;
+}
+.mobile-drawer.open{display:block;}
+.drawer-mask{position:absolute;inset:0;background:rgba(16,32,24,.45);}
+.drawer-panel{
+  position:absolute;right:0;top:0;bottom:0;width:78%;max-width:320px;
+  background:#fff;padding:18px;overflow:auto;box-shadow:var(--shadow-2);
+}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.drawer-head strong{font-size:15px;color:var(--green-900);}
+.drawer-close{border:0;background:var(--green-100);color:var(--green-900);border-radius:7px;width:32px;height:32px;font-size:18px;cursor:pointer;}
+.drawer-panel a{display:block;padding:10px 8px;border-radius:8px;font-size:14.5px;color:var(--ink-2);}
+.drawer-panel a:hover{background:var(--green-100);color:var(--green-900);}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(148deg,#12301f 0%,#1f5c3d 46%,#2f8c5c 100%);
+  color:#eaf7ef;
+}
+.hero-inner{
+  max-width:1340px;margin:0 auto;padding:52px 20px 56px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(200,240,168,.14);border:1px solid rgba(200,240,168,.32);
+  color:var(--mint);font-size:12.5px;letter-spacing:.4px;
+  padding:4px 11px;border-radius:999px;margin-bottom:16px;
+}
+.hero h1{
+  font-size:clamp(28px,3.6vw,44px);
+  letter-spacing:1px;color:#fff;margin-bottom:16px;
+}
+.hero-desc{
+  font-size:15.5px;line-height:1.85;color:#d3e9db;max-width:34em;margin-bottom:22px;
+}
+.hero-desc strong{color:#fff;font-weight:600;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-main{
+  background:var(--mint);color:var(--green-900);font-weight:700;
+  padding:10px 22px;border-radius:var(--radius-btn);font-size:14.5px;
+  border:0;cursor:pointer;transition:transform .18s,box-shadow .18s;
+  display:inline-block;
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.22);}
+.btn-line{
+  border:1px solid rgba(200,240,168,.55);color:#eaf7ef;
+  padding:10px 20px;border-radius:var(--radius-btn);font-size:14.5px;
+  transition:background .18s;
+}
+.btn-line:hover{background:rgba(200,240,168,.14);}
+.hero-stats{
+  display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;
+}
+.hero-stats div{font-size:12.5px;color:#a9cbb8;}
+.hero-stats b{display:block;font-size:20px;color:#fff;font-weight:700;font-variant-numeric:tabular-nums;}
+.hero-visual{position:relative;height:300px;}
+.hero-visual svg{width:100%;height:100%;}
+.leaf-pulse{transform-origin:center;animation:pulse 6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.9;}50%{opacity:.55;}}
+@media (prefers-reduced-motion:reduce){
+  .leaf-pulse{animation:none;}
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+
+/* ---------- 主布局：三栏门户 ---------- */
+.layout{
+  max-width:1340px;margin:0 auto;padding:30px 20px 10px;
+  display:grid;
+  grid-template-columns:178px minmax(0,1fr) 246px;
+  gap:26px;
+  align-items:start;
+}
+.left-rail{position:sticky;top:var(--offset);}
+.rail-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 12px;box-shadow:var(--shadow-1);
+}
+.rail-title{
+  font-size:12px;letter-spacing:1.2px;color:var(--ink-3);
+  text-transform:uppercase;margin-bottom:9px;padding-left:6px;
+}
+.rail-nav a{
+  display:block;padding:7px 10px;border-radius:8px;font-size:13.5px;color:var(--ink-2);
+  border-left:3px solid transparent;transition:background .16s,color .16s,border-color .16s;
+  margin-bottom:2px;
+}
+.rail-nav a:hover{background:var(--green-100);color:var(--green-900);}
+.rail-nav a.current{background:var(--green-100);color:var(--green-900);font-weight:600;border-left-color:var(--green-500);}
+.rail-note{
+  margin-top:14px;padding:11px;border-radius:10px;background:var(--green-100);
+  font-size:12.5px;color:var(--green-900);line-height:1.65;
+}
+.rail-note b{display:block;margin-bottom:3px;}
+
+.main-col{min-width:0;}
+.right-rail{position:sticky;top:var(--offset);display:flex;flex-direction:column;gap:16px;}
+
+/* ---------- 通用板块 ---------- */
+.block{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:24px 24px 22px;margin-bottom:24px;box-shadow:var(--shadow-1);
+}
+.block-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+.block-head h2{font-size:20px;color:var(--green-900);letter-spacing:.3px;}
+.block-head .more{font-size:13px;color:var(--green-500);flex:none;}
+.block-head .more:hover{color:var(--green-900);text-decoration:underline;}
+.block-sub{font-size:13.5px;color:var(--ink-3);margin-bottom:16px;line-height:1.65;}
+
+/* 概览 */
+.overview-body{font-size:14.6px;color:var(--ink-2);line-height:1.9;}
+.overview-body p{margin-bottom:.85em;}
+.overview-body strong{color:var(--green-900);}
+.term-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.term{
+  font-size:12.5px;padding:4px 10px;border-radius:999px;
+  background:var(--green-100);color:var(--green-700);border:1px solid #cfe7d9;
+}
+
+/* 精选卡片 */
+.card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:16px;
+}
+.pick-card{
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.pick-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);border-color:var(--green-300);}
+.pick-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--green-100);}
+.pick-thumb img{width:100%;height:100%;object-fit:cover;}
+.pick-type{
+  position:absolute;left:9px;top:9px;font-size:11.5px;padding:2px 8px;border-radius:5px;
+  background:rgba(22,61,41,.82);color:#dff3e6;letter-spacing:.3px;
+}
+.pick-body{padding:12px 13px 14px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.pick-body h3{font-size:15px;color:var(--ink-1);line-height:1.45;}
+.pick-desc{font-size:13px;color:var(--ink-3);line-height:1.7;flex:1;}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{
+  font-size:11.5px;padding:2px 7px;border-radius:var(--radius-tag);
+  background:#f0f6f1;color:var(--green-700);border:1px solid #e0eee5;
+}
+.pick-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:8px;
+}
+.pick-meta .score{color:var(--amber);font-weight:700;}
+
+/* 最新动态列表 */
+.updates{list-style:none;padding:0;margin:0;}
+.updates li{
+  display:grid;grid-template-columns:88px minmax(0,1fr);gap:14px;
+  padding:11px 0;border-bottom:1px solid #eef4f0;
+}
+.updates li:last-child{border-bottom:0;padding-bottom:0;}
+.updates time{font-size:12.5px;color:var(--green-500);font-variant-numeric:tabular-nums;padding-top:2px;}
+.updates .u-title{font-size:14.5px;font-weight:600;color:var(--ink-1);margin-bottom:2px;}
+.updates .u-desc{font-size:13px;color:var(--ink-3);line-height:1.65;}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px;}
+.cat-item{
+  border:1px solid var(--line);border-radius:10px;padding:12px 13px;background:#fbfdfb;
+  transition:background .18s,border-color .18s;
+}
+.cat-item:hover{background:var(--green-100);border-color:var(--green-300);}
+.cat-item b{display:block;font-size:14px;color:var(--green-900);margin-bottom:3px;}
+.cat-item span{font-size:12px;color:var(--ink-3);line-height:1.55;display:block;}
+
+/* 深度解析 */
+.deep-body{font-size:14.8px;color:var(--ink-2);line-height:1.95;}
+.deep-body h3{
+  font-size:16.5px;color:var(--green-900);margin:22px 0 9px;padding-left:11px;
+  border-left:4px solid var(--green-500);
+}
+.deep-body h3:first-child{margin-top:4px;}
+.deep-body ul{padding-left:1.3em;}
+.deep-body li{margin-bottom:.45em;}
+.deep-body strong{color:var(--green-900);}
+.cmp-table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:13.5px;}
+.cmp-table th,.cmp-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+.cmp-table th{background:var(--green-100);color:var(--green-900);font-weight:600;white-space:nowrap;}
+.cmp-table td{color:var(--ink-2);}
+.quote-block{
+  border-left:3px solid var(--amber);background:var(--amber-soft);
+  padding:11px 14px;border-radius:0 9px 9px 0;font-size:13.5px;color:#6b4a16;margin:14px 0;
+}
+
+/* 指南步骤 */
+.steps{list-style:none;padding:0;margin:0;counter-reset:step;}
+.steps li{
+  position:relative;padding:0 0 16px 44px;counter-increment:step;
+  border-left:2px dashed #d6e8dc;margin-left:15px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0;}
+.steps li::before{
+  content:counter(step);position:absolute;left:-16px;top:-2px;
+  width:30px;height:30px;border-radius:50%;background:var(--green-700);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;
+}
+.steps b{display:block;font-size:14.5px;color:var(--green-900);margin-bottom:3px;}
+.steps p{font-size:13.5px;color:var(--ink-3);line-height:1.7;margin:0;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:9px;}
+details.faq{
+  border:1px solid var(--line);border-radius:10px;background:#fbfdfb;overflow:hidden;
+}
+details.faq summary{
+  cursor:pointer;padding:12px 15px;font-size:14.5px;font-weight:600;color:var(--green-900);
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+details.faq summary::-webkit-details-marker{display:none;}
+details.faq summary::after{
+  content:"+";font-size:18px;color:var(--green-500);font-weight:400;flex:none;line-height:1;
+}
+details.faq[open] summary::after{content:"−";}
+details.faq .faq-a{
+  padding:0 15px 14px;font-size:13.8px;color:var(--ink-2);line-height:1.85;border-top:1px solid #eef4f0;
+  padding-top:11px;
+}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:12px;}
+.comment{
+  border:1px solid var(--line);border-radius:11px;padding:12px 13px;background:#fbfdfb;
+}
+.comment .c-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  background:var(--green-300);color:var(--green-900);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;
+}
+.c-name{font-size:13px;font-weight:600;color:var(--green-900);}
+.c-time{font-size:11.5px;color:var(--ink-3);margin-left:auto;}
+.c-text{font-size:13.2px;color:var(--ink-2);line-height:1.72;}
+.c-text em{font-style:normal;color:var(--green-700);}
+
+/* 资讯 */
+.news-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;}
+.news-list li{padding:13px 0;border-bottom:1px solid #eef4f0;}
+.news-list li:last-child{border-bottom:0;padding-bottom:0;}
+.news-list .n-title{font-size:14.8px;font-weight:600;color:var(--ink-1);margin-bottom:4px;}
+.news-list .n-title:hover{color:var(--green-700);}
+.news-list .n-meta{font-size:12px;color:var(--green-500);margin-bottom:4px;font-variant-numeric:tabular-nums;}
+.news-list .n-sum{font-size:13.2px;color:var(--ink-3);line-height:1.7;}
+
+/* 推荐标签索引 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px;}
+.rec-tags a{
+  font-size:13px;padding:6px 13px;border-radius:999px;
+  background:#f0f6f1;color:var(--green-700);border:1px solid #dfeee6;
+  transition:background .16s,color .16s,border-color .16s;
+}
+.rec-tags a:hover{background:var(--green-700);color:#fff;border-color:var(--green-700);}
+
+/* 榜单 */
+.rank-list{list-style:none;padding:0;margin:0;counter-reset:rank;}
+.rank-list li{
+  display:grid;grid-template-columns:26px minmax(0,1fr) 62px;gap:10px;align-items:center;
+  padding:9px 0;border-bottom:1px dashed #e6f0e9;font-size:13.8px;
+}
+.rank-list li:last-child{border-bottom:0;}
+.rank-list li::before{
+  counter-increment:rank;content:counter(rank);
+  width:22px;height:22px;border-radius:6px;background:var(--green-100);color:var(--green-700);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;
+}
+.rank-list li:nth-child(-n+3)::before{background:var(--amber);color:#fff;}
+.rank-name{color:var(--ink-1);}
+.rank-name small{display:block;font-size:11.8px;color:var(--ink-3);}
+.rank-val{font-size:12.5px;color:var(--green-500);text-align:right;font-variant-numeric:tabular-nums;}
+
+/* 投稿互动 */
+.submit-panel{
+  background:linear-gradient(135deg,#eaf7ee,#d9f0e3);
+  border:1px solid #cbe6d7;border-radius:var(--radius-card);padding:22px 24px;margin-bottom:24px;
+}
+.submit-panel h2{font-size:19px;color:var(--green-900);margin-bottom:8px;}
+.submit-panel p{font-size:13.8px;color:var(--ink-2);line-height:1.8;max-width:60em;}
+.submit-form{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.submit-form input,.submit-form select{
+  border:1px solid #bcdcc9;border-radius:8px;padding:8px 11px;font-size:13.5px;
+  background:#fff;color:var(--ink-1);min-width:0;
+}
+.submit-form input[type=text]{flex:1 1 200px;}
+.submit-form button{
+  border:0;background:var(--green-700);color:#fff;border-radius:8px;padding:8px 20px;
+  font-size:13.5px;cursor:pointer;font-weight:600;
+}
+.submit-form button:hover{background:var(--green-900);}
+.form-msg{font-size:13px;color:var(--green-700);margin-top:8px;display:none;}
+.form-msg.show{display:block;}
+
+/* 右侧辅助栏 */
+.side-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:16px 15px;box-shadow:var(--shadow-1);
+}
+.side-card h2{font-size:14.5px;color:var(--green-900);margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.side-card h2::before{content:"";width:4px;height:15px;background:var(--green-500);border-radius:2px;display:inline-block;}
+.side-hot{list-style:none;padding:0;margin:0;}
+.side-hot li{padding:7px 0;border-bottom:1px dashed #eaf2ed;font-size:13.2px;line-height:1.5;}
+.side-hot li:last-child{border-bottom:0;}
+.side-hot a{color:var(--ink-2);}
+.side-hot a:hover{color:var(--green-700);}
+.side-hot .num{display:inline-block;width:16px;color:var(--green-500);font-weight:700;font-size:12px;}
+.side-note{font-size:12.5px;color:var(--ink-3);line-height:1.7;}
+.side-note b{color:var(--green-900);}
+.side-timeline{list-style:none;padding:0;margin:0;}
+.side-timeline li{position:relative;padding:0 0 11px 15px;border-left:2px solid #e0eee5;font-size:12.8px;color:var(--ink-3);line-height:1.6;}
+.side-timeline li:last-child{border-left-color:transparent;padding-bottom:0;}
+.side-timeline li::before{
+  content:"";position:absolute;left:-4px;top:6px;width:6px;height:6px;border-radius:50%;background:var(--green-300);
+}
+.side-timeline b{display:block;color:var(--ink-1);font-size:13px;font-weight:600;}
+.side-timeline time{color:var(--green-500);font-size:11.5px;font-variant-numeric:tabular-nums;}
+
+/* 页尾 */
+.site-footer{
+  background:var(--green-900);color:#b9d6c6;margin-top:34px;padding:38px 20px 24px;
+}
+.footer-inner{max-width:1340px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:28px;}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.footer-brand svg{width:30px;height:30px;}
+.footer-brand strong{color:#fff;font-size:16px;}
+.footer-pos{font-size:13.2px;line-height:1.85;color:#a9cbb8;max-width:30em;}
+.footer-col h3{font-size:13px;color:#dff3e6;margin-bottom:10px;letter-spacing:.6px;}
+.footer-col a{display:block;font-size:13px;color:#9dc2ae;padding:3px 0;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{
+  max-width:1340px;margin:26px auto 0;padding-top:16px;border-top:1px solid rgba(200,240,168,.16);
+  font-size:12.2px;color:#87ab97;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;line-height:1.7;
+}
+.back-top{
+  position:fixed;right:20px;bottom:22px;z-index:70;
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--green-900);box-shadow:var(--shadow-2);
+  display:none;align-items:center;justify-content:center;cursor:pointer;font-size:17px;
+}
+.back-top.show{display:flex;}
+.back-top:hover{background:var(--green-100);}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr) 250px;gap:22px;}
+  .left-rail{display:none;}
+  .main-nav{display:none;}
+  .hamburger{display:flex;}
+  .hero-inner{grid-template-columns:minmax(0,1fr);padding:40px 20px 42px;}
+  .hero-visual{height:210px;max-width:420px;}
+  .footer-inner{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:740px){
+  :root{--announce-h:34px;--header-h:58px;}
+  .layout{grid-template-columns:minmax(0,1fr);padding:20px 14px 6px;}
+  .right-rail{position:static;order:2;}
+  .main-col{order:1;}
+  .announce-inner{padding:0 14px;gap:12px;overflow-x:auto;}
+  .announce-list{gap:16px;}
+  .header-inner{padding:0 14px;gap:10px;}
+  .search-box input{width:96px;}
+  .logo-text{font-size:15px;}
+  .hero h1{font-size:27px;}
+  .hero-desc{font-size:14.5px;}
+  .hero-stats{gap:18px;}
+  .block{padding:18px 15px;border-radius:12px;}
+  .block-head h2{font-size:17.5px;}
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(100%,1fr));}
+  .comment-grid{grid-template-columns:minmax(0,1fr);}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .footer-inner{grid-template-columns:minmax(0,1fr);gap:22px;}
+  .cmp-table{font-size:12.5px;}
+  .cmp-table th,.cmp-table td{padding:6px 7px;}
+  .deep-body{font-size:14px;}
+  .updates li{grid-template-columns:72px minmax(0,1fr);gap:10px;}
+  .submit-form input[type=text]{flex:1 1 100%;}
+  .back-top{right:14px;bottom:16px;width:38px;height:38px;}
+  .search-result{width:min(300px,calc(100vw - 36px));}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="announce" aria-label="站内更新公告">
+    <div class="announce-inner">
+      <span class="announce-brand">91含羞草实验所</span>
+      <div class="announce-list">
+        <span class="announce-item"><span class="dot"></span><b>叶枕电位曲线台账</b>新增 12 组<time datetime="2026-11-07">11-07</time></span>
+        <span class="announce-item"><span class="dot"></span><b>触碰阈值对照表</b>更新至第 4 版<time datetime="2026-11-06">11-06</time></span>
+        <span class="announce-item"><span class="dot"></span><b>感震延时摄影</b>投稿 37 条<time datetime="2026-11-05">11-05</time></span>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/#top" aria-label="91含羞草实验所 首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1f5c3d"/>
+          <path d="M32 52V30M32 30C32 30 18 28 16 16c12 0 16 8 16 14zM32 34c0 0 14-2 16-14-12 0-16 8-16 14z" fill="none" stroke="#c8f0a8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">91含羞草实验所</span>
+      </a>
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#overview" class="active">领域概览</a>
+        <a href="/#picks">精选实验</a>
+        <a href="/#updates">观测动态</a>
+        <a href="/#cats">分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观察指南</a>
+        <a href="/#faq">问答</a>
+        <a href="/#submit">投稿</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <div class="search-box">
+            <input id="searchInput" type="text" placeholder="搜实验/条目" aria-label="站内搜索">
+            <button id="searchBtn" type="button">搜索</button>
+          </div>
+          <div class="search-result" id="searchResult" role="region" aria-live="polite"></div>
+        </div>
+        <button class="hamburger" id="hamburger" type="button" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="移动导航">
+  <div class="drawer-mask" id="drawerMask"></div>
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <strong>栏目导航</strong>
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭菜单">×</button>
+    </div>
+    <a href="/#overview">领域概览</a>
+    <a href="/#picks">精选实验</a>
+    <a href="/#updates">观测动态</a>
+    <a href="/#cats">分类入口</a>
+    <a href="/#deep">深度解析</a>
+    <a href="/#guide">观察指南</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comments">实验者评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#rank">月度榜单</a>
+    <a href="/#submit">投稿与交流</a>
+  </div>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-kicker">叶枕电位 · 向触运动 · 感震观测</span>
+      <h1>91含羞草实验所</h1>
+      <p class="hero-desc">聚合含羞草触碰闭合实验的全套观测材料：<strong>叶枕电位曲线</strong>、<strong>触碰阈值对照</strong>、<strong>复叶恢复时长记录</strong>与校园自然课的延时摄影作业。适合植物生理自学者、中学科学教师和阳台种植玩家按图索骥。</p>
+      <div class="hero-actions">
+        <a class="btn-main" href="/#picks">查看精选实验</a>
+        <a class="btn-line" href="/#guide">观察入门路径</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>186</b>条实验记录</div>
+        <div><b>42</b>组电位曲线</div>
+        <div><b>11-07</b>最近更新</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 300" role="presentation">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c8f0a8" stop-opacity=".35"/>
+            <stop offset="100%" stop-color="#c8f0a8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="230" cy="150" r="140" fill="url(#glow)"/>
+        <g stroke="#c8f0a8" stroke-width="2.4" fill="none" stroke-linecap="round">
+          <path d="M210 262V150"/>
+          <g class="leaf-pulse">
+            <path d="M210 152c-30 0-52-14-58-44 30 2 50 18 58 44z" fill="#2f8c5c" fill-opacity=".55"/>
+            <path d="M210 138c-26 0-46-12-52-38 27 2 45 16 52 38z" fill="#7fc8a1" fill-opacity=".5"/>
+            <path d="M210 156c30 0 52-14 58-44-30 2-50 18-58 44z" fill="#2f8c5c" fill-opacity=".55"/>
+            <path d="M210 142c26 0 46-12 52-38-27 2-45 16-52 38z" fill="#7fc8a1" fill-opacity=".5"/>
+          </g>
+          <path d="M210 200c-24 0-42-10-48-32 25 2 41 14 48 32z" fill="#2f8c5c" fill-opacity=".4"/>
+          <path d="M210 204c24 0 42-10 48-32-25 2-41 14-48 32z" fill="#2f8c5c" fill-opacity=".4"/>
+        </g>
+        <g stroke="#d98324" stroke-width="2" fill="none">
+          <polyline points="96,232 130,232 142,196 156,246 170,206 184,226 200,226"/>
+        </g>
+        <circle cx="200" cy="226" r="4" fill="#d98324"/>
+        <text x="96" y="258" fill="#a9cbb8" font-size="11" font-family="sans-serif">叶枕电位 · 触碰后 0.8s</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+  <!-- 左频道索引 -->
+  <aside class="left-rail">
+    <div class="rail-card">
+      <div class="rail-title">频道索引</div>
+      <nav class="rail-nav" aria-label="频道索引">
+        <a href="/#overview" class="current">领域概览</a>
+        <a href="/#picks">精选实验</a>
+        <a href="/#updates">观测动态</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观察指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">实验者评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#rec">相关推荐</a>
+        <a href="/#rank">月度榜单</a>
+        <a href="/#submit">投稿与交流</a>
+      </nav>
+      <div class="rail-note">
+        <b>本轮观测窗口</b>
+        10-10 至 11-08，重点记录夜间 22:00 后复叶张开角度。
+      </div>
+    </div>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main-col">
+
+    <!-- 1 领域概览 -->
+    <section class="block" id="overview">
+      <div class="block-head">
+        <h2>含羞草触碰闭合与感震运动概览</h2>
+      </div>
+      <div class="overview-body">
+        <p>含羞草（<em>Mimosa pudica</em>）的感震运动由叶枕部位的薄壁细胞膨压变化驱动。触碰后 0.1 秒内，叶枕下半部细胞快速失水，羽片成对合拢，整片复叶下垂。这一过程可逆，恢复时间从数分钟到半小时不等，取决于温度、光照和植株年龄。围绕这条主线，可以拆出几个相对独立的方向。</p>
+        <p><strong>电位记录方向</strong>关注动作电位与变异电位的波形差异。用表面电极贴在叶枕外侧，能捕捉到触碰后约 0.3 秒出现的负向峰，幅度在 8—25 mV 之间浮动。校园实验室多用 Arduino 加 AD8232 心电模块改装，成本压到 200 元以内。</p>
+        <p><strong>阈值对照方向</strong>研究多大刺激才触发闭合。棉签轻扫、镊子夹持、水滴冲击、气流吹拂，四类刺激的触发率差异明显。2026 年 10 月的对照记录显示，气流吹拂在 0.5 m/s 以下几乎无效，而镊子夹持羽片基部 0.2 牛顿即可稳定触发。</p>
+        <p><strong>复叶恢复方向</strong>把闭合到张开的过程做成延时序列，量化恢复时长。夜间恢复普遍慢于白天，25℃ 恒温箱内平均 14 分钟，18℃ 环境下拉长到 23 分钟。这类数据对理解植物生物钟有帮助。</p>
+        <p><strong>自然教育方向</strong>把实验改造成 45 分钟课堂活动，用手机慢动作拍摄替代高速相机。中学科学课和亲子自然营是主要使用场景，配套的观察手册强调记录规范而非结论灌输。</p>
+        <div class="term-row">
+          <span class="term">叶枕薄壁细胞</span>
+          <span class="term">动作电位</span>
+          <span class="term">变异电位</span>
+          <span class="term">膨压变化</span>
+          <span class="term">向触性</span>
+          <span class="term">感震运动</span>
+          <span class="term">复叶恢复时长</span>
+          <span class="term">触碰阈值</span>
+          <span class="term">羽片合拢角</span>
+          <span class="term">延时摄影</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 精选实验 -->
+    <section class="block" id="picks">
+      <div class="block-head">
+        <h2>精选实验与观测条目</h2>
+        <a class="more" href="/#updates">全部更新 →</a>
+      </div>
+      <p class="block-sub">以下条目均附原始记录表或影像素材，按主题分布在电位、阈值、恢复、教学四类。</p>
+      <div class="card-grid">
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-potential01/400/300" width="400" height="300" loading="lazy" alt="叶枕表面电极贴附位置与电位采集装置">
+            <span class="pick-type">电位记录</span>
+          </div>
+          <div class="pick-body">
+            <h3>叶枕动作电位 42 组波形台账</h3>
+            <p class="pick-desc">用 AD8232 模块采集的原始波形，标注了触碰时刻、峰值幅度与回落时间，附 CSV 下载说明。</p>
+            <div class="tag-row"><span class="tag">动作电位</span><span class="tag">AD8232</span><span class="tag">波形分析</span></div>
+            <div class="pick-meta"><span>更新 11-07</span><span class="score">★ 4.8</span></div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-threshold02/400/300" width="400" height="300" loading="lazy" alt="镊子夹持含羞草羽片基部的阈值测试">
+            <span class="pick-type">阈值对照</span>
+          </div>
+          <div class="pick-body">
+            <h3>四类刺激触碰阈值对照表（第 4 版）</h3>
+            <p class="pick-desc">棉签、镊子、水滴、气流四种刺激的触发率与所需强度，共 320 次重复试验的统计结果。</p>
+            <div class="tag-row"><span class="tag">触碰阈值</span><span class="tag">重复试验</span><span class="tag">触发率</span></div>
+            <div class="pick-meta"><span>更新 11-06</span><span class="score">★ 4.9</span></div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-timelapse03/400/300" width="400" height="300" loading="lazy" alt="含羞草复叶从闭合到张开的延时摄影序列">
+            <span class="pick-type">延时影像</span>
+          </div>
+          <div class="pick-body">
+            <h3>复叶 14 分钟恢复延时序列</h3>
+            <p class="pick-desc">25℃ 恒温箱内拍摄，每 10 秒一帧，完整呈现羽片从合拢到重新展开的角度变化。</p>
+            <div class="tag-row"><span class="tag">复叶恢复</span><span class="tag">延时摄影</span><span class="tag">恒温箱</span></div>
+            <div class="pick-meta"><span>更新 11-04</span><span class="score">★ 4.7</span></div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-night04/400/300" width="400" height="300" loading="lazy" alt="夜间红光照明下记录含羞草闭合状态">
+            <span class="pick-type">昼夜节律</span>
+          </div>
+          <div class="pick-body">
+            <h3>夜间 22:00 闭合角与恢复延迟</h3>
+            <p class="pick-desc">红光照明下每 2 小时记录一次，发现 22:00 后闭合角增大、恢复延后约 9 分钟。</p>
+            <div class="tag-row"><span class="tag">生物钟</span><span class="tag">红光照明</span><span class="tag">闭合角</span></div>
+            <div class="pick-meta"><span>更新 11-02</span><span class="score">★ 4.6</span></div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-class05/400/300" width="400" height="300" loading="lazy" alt="中学科学课上学生用手机拍摄含羞草闭合过程">
+            <span class="pick-type">课堂方案</span>
+          </div>
+          <div class="pick-body">
+            <h3>45 分钟课堂：手机慢动作拍闭合</h3>
+            <p class="pick-desc">不依赖高速相机，用 240fps 慢动作模式记录羽片合拢，配套观察记录单与讨论问题。</p>
+            <div class="tag-row"><span class="tag">自然教育</span><span class="tag">慢动作</span><span class="tag">观察记录单</span></div>
+            <div class="pick-meta"><span>更新 10-30</span><span class="score">★ 4.5</span></div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-recover06/400/300" width="400" height="300" loading="lazy" alt="不同温度条件下含羞草复叶恢复时长对比曲线">
+            <span class="pick-type">对照实验</span>
+          </div>
+          <div class="pick-body">
+            <h3>18℃ 与 25℃ 恢复时长双组对照</h3>
+            <p class="pick-desc">同批次植株分两组控温，各测 30 次，恢复中位数分别为 23 分钟与 14 分钟。</p>
+            <div class="tag-row"><span class="tag">温度对照</span><span class="tag">恢复中位数</span><span class="tag">同批次</span></div>
+            <div class="pick-meta"><span>更新 10-27</span><span class="score">★ 4.7</span></div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-water07/400/300" width="400" height="300" loading="lazy" alt="微量注射器滴落水滴触发含羞草闭合">
+            <span class="pick-type">刺激类型</span>
+          </div>
+          <div class="pick-body">
+            <h3>水滴冲击触发率与落点关系</h3>
+            <p class="pick-desc">5 微升与 20 微升两档水滴，落在羽片基部触发率 92%，落在叶尖仅 31%。</p>
+            <div class="tag-row"><span class="tag">水滴冲击</span><span class="tag">落点差异</span><span class="tag">微量注射器</span></div>
+            <div class="pick-meta"><span>更新 10-23</span><span class="score">★ 4.4</span></div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <div class="pick-thumb">
+            <img src="https://picsum.photos/seed/mimosa-seed08/400/300" width="400" height="300" loading="lazy" alt="含羞草幼苗与成熟植株的闭合反应差异">
+            <span class="pick-type">发育观察</span>
+          </div>
+          <div class="pick-body">
+            <h3>幼苗期与成株期反应速度差异</h3>
+            <p class="pick-desc">播种后第 30 天与第 90 天各测一轮，幼苗闭合启动慢 0.2 秒，但恢复更快。</p>
+            <div class="tag-row"><span class="tag">幼苗期</span><span class="tag">发育对比</span><span class="tag">反应速度</span></div>
+            <div class="pick-meta"><span>更新 10-19</span><span class="score">★ 4.3</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 观测动态 -->
+    <section class="block" id="updates">
+      <div class="block-head">
+        <h2>近 30 天观测动态</h2>
+      </div>
+      <ul class="updates">
+        <li>
+          <time datetime="2026-11-07">11-07</time>
+          <div>
+            <div class="u-title">叶枕电位台账新增 12 组夜间数据</div>
+            <div class="u-desc">22:00—02:00 采样，峰值幅度平均下降 3.4 mV，回落时间延长约 1.6 秒。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-11-06">11-06</time>
+          <div>
+            <div class="u-title">触碰阈值对照表更新至第 4 版</div>
+            <div class="u-desc">补入气流刺激 0.3—1.2 m/s 五档，确认 0.5 m/s 以下基本不触发闭合。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-11-05">11-05</time>
+          <div>
+            <div class="u-title">感震延时摄影投稿累计 37 条</div>
+            <div class="u-desc">其中 9 条用手机 240fps 拍摄，画质可辨羽片逐对合拢顺序。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-11-04">11-04</time>
+          <div>
+            <div class="u-title">复叶恢复延时序列上线</div>
+            <div class="u-desc">25℃ 恒温箱，10 秒一帧，共 84 帧，完整记录 14 分钟恢复全过程。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-11-02">11-02</time>
+          <div>
+            <div class="u-title">夜间闭合角记录补测完成</div>
+            <div class="u-desc">红光照明下 6 个时间点，22:00 后闭合角较 18:00 增大 11 度。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-10-30">10-30</time>
+          <div>
+            <div class="u-title">课堂方案新增观察记录单模板</div>
+            <div class="u-desc">含时间戳栏、刺激方式栏、恢复时长栏，可直接打印 A4 双面使用。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-10-27">10-27</time>
+          <div>
+            <div class="u-title">18℃ 与 25℃ 双组对照数据归档</div>
+            <div class="u-desc">两组各 30 次，恢复中位数 23 分钟与 14 分钟，原始表格已附。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-10-23">10-23</time>
+          <div>
+            <div class="u-title">水滴冲击实验补充 5 微升档</div>
+            <div class="u-desc">羽片基部触发率 92%，叶尖 31%，差异主要来自组织厚度。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-10-19">10-19</time>
+          <div>
+            <div class="u-title">幼苗期反应速度对比完成</div>
+            <div class="u-desc">第 30 天与第 90 天各测 20 次，幼苗启动慢 0.2 秒，恢复快约 4 分钟。</div>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-10-15">10-15</time>
+          <div>
+            <div class="u-title">电极贴附位置标准图发布</div>
+            <div class="u-desc">叶枕外侧 2 毫米处，避开主脉，附三张不同角度示意照片。</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="block" id="cats">
+      <div class="block-head">
+        <h2>按实验类型查找</h2>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#picks"><b>叶枕电位记录</b><span>动作电位、变异电位、电极贴附与采集设备</span></a>
+        <a class="cat-item" href="/#picks"><b>触碰阈值对照</b><span>四类刺激强度、触发率、重复试验设计</span></a>
+        <a class="cat-item" href="/#picks"><b>复叶恢复观测</b><span>恢复时长、温度影响、延时序列</span></a>
+        <a class="cat-item" href="/#picks"><b>昼夜节律实验</b><span>闭合角变化、红光照明、夜间采样</span></a>
+        <a class="cat-item" href="/#picks"><b>课堂与自然教育</b><span>45 分钟方案、观察记录单、慢动作拍摄</span></a>
+        <a class="cat-item" href="/#picks"><b>发育阶段对比</b><span>幼苗期、成株期、播种天数与反应差异</span></a>
+        <a class="cat-item" href="/#picks"><b>刺激类型实验</b><span>水滴、气流、镊子、棉签的触发差异</span></a>
+        <a class="cat-item" href="/#deep"><b>方法学与争议</b><span>波形解读、样本量、可重复性讨论</span></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="block" id="deep">
+      <div class="block-head">
+        <h2>含羞草实验的三处方法学分歧</h2>
+      </div>
+      <div class="deep-body">
+        <p>关于含羞草感震运动的研究，公开流传的说法与实验记录之间存在明显落差。分歧集中在三个具体位置：电位波形的解读、阈值实验的样本设计、恢复时长的测量口径。以下逐项拆开。</p>
+
+        <h3>分歧一：8 mV 到 25 mV 的峰幅，是电极问题还是生理差异</h3>
+        <p>同一株含羞草，同一天内连续测量，表面电极采集到的负向峰幅度可以相差三倍。2026 年 10 月 15 日发布的电极贴附标准图给出的位置是叶枕外侧 2 毫米、避开主脉。按这个位置贴附，42 组曲线中有 31 组峰幅落在 12—18 mV 区间，离散度明显收窄。</p>
+        <p>问题出在偏离标准的那些记录。贴在主脉上的电极，信号被维管束组织的容积传导稀释，峰幅普遍低于 10 mV；贴在叶柄中段的电极，则混入了邻近叶枕的场电位，峰幅虚高。上海一所中学的科学社团在 10 月 21 日的对比记录里，把同一株植物的三个贴附位置各测 10 次，均值分别为 9.2 mV、16.4 mV、21.7 mV。这个数字比任何理论解释都直接。</p>
+        <div class="quote-block">可核对的环节：电极位置、参考电极距离、放大器增益设置。三项任何一项未记录，该组峰幅数据就无法与其他组比较。</div>
+        <p>波形时长同样受设备影响。AD8232 模块的带通滤波范围是 0.5—40 Hz，动作电位的主要能量集中在 1—10 Hz，基本能覆盖；但变异电位的慢波成分会被高通滤波削掉一部分，导致回落段看起来比实际更陡。想保留慢波，需要把高通截止频率降到 0.1 Hz，代价是基线漂移更难处理。</p>
+
+        <h3>分歧二：320 次重复试验里，触发率的置信区间有多宽</h3>
+        <p>第 4 版阈值对照表给出四类刺激的触发率：镊子夹持 98%，棉签轻扫 76%，20 微升水滴 64%，气流 0.5 m/s 为 11%。单看百分比容易下结论，实际每组样本量并不相同。</p>
+        <table class="cmp-table">
+          <thead>
+            <tr><th>刺激方式</th><th>样本量</th><th>触发率</th><th>95% 置信区间</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>镊子夹持羽片基部</td><td>60 次</td><td>98%</td><td>91%—100%</td></tr>
+            <tr><td>棉签轻扫羽片</td><td>80 次</td><td>76%</td><td>65%—85%</td></tr>
+            <tr><td>20 微升水滴落基部</td><td>100 次</td><td>64%</td><td>54%—73%</td></tr>
+            <tr><td>气流 0.5 m/s</td><td>80 次</td><td>11%</td><td>5%—20%</td></tr>
+          </tbody>
+        </table>
+        <p>气流组的区间跨度接近 15 个百分点，意味着 11% 这个数字只能说明“基本不触发”，不能用来比较 0.4 m/s 与 0.6 m/s 的细微差别。要区分这一档，样本量至少翻四倍。棉签组和镊子组的区间不重叠，两者的差异可以确认；棉签组与水滴组的区间有交叠，64% 与 76% 之间并不存在可靠的高低之分。</p>
+        <p>另一个常被忽略的变量是植株状态。同一株含羞草在连续被触碰 5 次后，第 6 次的触发阈值会上升，恢复时间也拉长，这是习惯化的表现。阈值表在每轮测试之间留了 15 分钟间隔，但 10 月 23 日补充实验发现，间隔 15 分钟后第 6 次反应仍偏弱。这一点在早期版本的表格里没有注明。</p>
+
+        <h3>分歧三：14 分钟与 23 分钟，测的到底是不是同一件事</h3>
+        <p>恢复时长的口径差异比想象中大。常见三种测法：羽片重新张开的起始时刻、羽片张开到初始角度一半的时刻、完全恢复初始角度的时刻。三种口径在同一次闭合事件上能差出 6—9 分钟。</p>
+        <p>25℃ 恒温箱那组数据用的是第二种口径，即半张角时刻，中位数 14 分钟。18℃ 那组用的是第三种口径，完全恢复时刻，中位数 23 分钟。两组数字常被并列引用，但口径不同，直接比较温度影响会得出偏大的结论。10 月 27 日归档时补了注释，把 18℃ 组的半张角时刻单独列出，为 16 分钟。温度造成的差异因此从 9 分钟收窄到 2 分钟。</p>
+        <p>还有一个更隐蔽的问题。延时摄影的帧间隔决定了时间分辨率。10 秒一帧的序列，恢复时刻的测量误差可达 ±10 秒，对 14 分钟这个量级影响有限；但如果换成 30 秒一帧，误差扩大到 ±30 秒，在比较不同处理组时就不再可忽略。现有的 84 帧序列用的是 10 秒间隔，属于可用范围。</p>
+        <ul>
+          <li>建议记录：口径类型（起始/半张角/完全恢复）、帧间隔、环境温度、植株编号。</li>
+          <li>不建议：把不同口径的恢复时长直接做加减，得出“快了几分钟”的判断。</li>
+          <li>可复核：18℃ 组的半张角原始表格已随 10-27 更新附在台账内。</li>
+        </ul>
+        <p>三处分歧指向同一件事：含羞草实验的门槛不在设备价格，而在记录规范。电极位置写清楚、样本量和间隔写清楚、恢复口径写清楚，三行字就能让一组数据从不可比变为可比。</p>
+      </div>
+    </section>
+
+    <!-- 6 观察指南 -->
+    <section class="block" id="guide">
+      <div class="block-head">
+        <h2>从一盆含羞草开始的观察顺序</h2>
+      </div>
+      <p class="block-sub">按投入时间从低到高排列。每一步都能独立产出可记录的结果，不必等前一步做完。</p>
+      <ol class="steps">
+        <li>
+          <b>先确认植株状态，再谈实验</b>
+          <p>买回或播种的含羞草，前两周只做适应性观察。每天固定时间触碰一次，记录闭合与恢复。状态稳定的植株，连续三天的恢复时长波动应在 3 分钟以内。波动过大的植株不适合做阈值实验。</p>
+        </li>
+        <li>
+          <b>用手机慢动作替代高速相机</b>
+          <p>240fps 慢动作已能分辨羽片逐对合拢的顺序。拍摄时把手机架在植株侧面 30 厘米处，光源从上方 45 度打，避免阴影遮住叶枕。一条 10 秒的慢动作素材，回放时能看清从基部到叶尖的传导方向。</p>
+        </li>
+        <li>
+          <b>选一种刺激，做满 30 次</b>
+          <p>棉签轻扫最容易标准化：同一根棉签、同一角度、同一力度，扫过羽片中部。30 次记录里，如果触发率落在 60%—85% 之间，说明刺激强度合适；高于 95% 说明刺激过强，低于 40% 说明太弱，都需调整。</p>
+        </li>
+        <li>
+          <b>把恢复时长拆成三个时刻记录</b>
+          <p>起始张开、半张角、完全恢复，三个时刻分别记。只记一个数字，后续无法与其他人的数据对照。记录时注明环境温度和测量方式（肉眼、延时、定时拍照）。</p>
+        </li>
+        <li>
+          <b>想深入再上电极，先解决基线漂移</b>
+          <p>AD8232 模块加 Arduino 的方案成本约 180 元，难点不在接线，在基线稳定。电极贴附后用医用胶带固定导线，静置 5 分钟再开始采集。第一组数据通常不可用，从第二组开始记录。</p>
+        </li>
+        <li>
+          <b>判断一个条目值不值得投入时间</b>
+          <p>看它有没有写清三件事：样本量、刺激参数、恢复口径。三项齐全的记录，即使结论反直觉也值得复现；三项缺两项的，只能当参考，不能当依据。</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="block" id="faq">
+      <div class="block-head">
+        <h2>含羞草实验常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq">
+          <summary>含羞草被碰后多久会重新张开？</summary>
+          <div class="faq-a">25℃ 环境下，半张角的中位时间约 14 分钟，完全恢复约 18—22 分钟。18℃ 时分别延长到 16 分钟和 23 分钟。刚浇过水、光照充足的植株恢复更快；连续被触碰过的植株，下一次恢复会明显变慢。</div>
+        </details>
+        <details class="faq">
+          <summary>为什么同一株含羞草的电位峰值每次都不一样？</summary>
+          <div class="faq-a">电极贴附位置是第一变量。叶枕外侧 2 毫米处的峰幅稳定在 12—18 mV，贴到主脉或叶柄中段就会偏离。植株的连续触碰次数、环境温度、电极与皮肤的接触电阻也会影响读数。记录时把这三项写清，离散度会明显下降。</div>
+        </details>
+        <details class="faq">
+          <summary>用棉签和用镊子触碰，触发率差多少？</summary>
+          <div class="faq-a">第 4 版对照表里，镊子夹持羽片基部的触发率 98%（60 次），棉签轻扫 76%（80 次）。两者置信区间不重叠，差异可靠。镊子的问题在于力度难标准化，不同操作者之间差异大；棉签更容易复制，适合多人协作的课堂实验。</div>
+        </details>
+        <details class="faq">
+          <summary>含羞草会“记住”被碰过吗？</summary>
+          <div class="faq-a">短时间内有习惯化现象。连续触碰 5 次后，第 6 次的触发阈值上升，恢复时间拉长。10 月 23 日的补充实验显示，间隔 15 分钟后这种效应仍未完全消退。习惯化的持续时间与植株年龄、温度有关，目前记录最长的是 40 分钟后恢复到基线水平。</div>
+        </details>
+        <details class="faq">
+          <summary>没有专业设备，能做出可用的实验记录吗？</summary>
+          <div class="faq-a">可以。手机 240fps 慢动作加一张打印的观察记录单，就能完成闭合顺序和恢复时长的记录。关键是三项：固定拍摄距离、固定光源角度、固定记录口径。电极数据属于加分项，不是入门门槛。</div>
+        </details>
+        <details class="faq">
+          <summary>夜间含羞草的反应和白天的差别在哪？</summary>
+          <div class="faq-a">夜间闭合角更大，恢复更慢。11 月 2 日的记录显示，22:00 后闭合角比 18:00 增大 11 度，恢复延后约 9 分钟。红光照明下采样对节律干扰较小，白光会打乱后续几个小时的闭合状态，不建议夜间实验用白光补光。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 评论 -->
+    <section class="block" id="comments">
+      <div class="block-head">
+        <h2>实验者留言</h2>
+      </div>
+      <div class="comment-grid">
+        <div class="comment">
+          <div class="c-head"><span class="avatar">林</span><span class="c-name">林间观测</span><span class="c-time">11-07</span></div>
+          <p class="c-text">按标准图把电极挪到叶枕外侧，峰幅从 9 跳到 16，之前两个月的数据算是白记了。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">陈</span><span class="c-name">陈老师科学课</span><span class="c-time">11-07</span></div>
+          <p class="c-text">45 分钟方案在初二用了一轮，学生最兴奋的是慢动作回放那五分钟。记录单打印双面刚好。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">阿</span><span class="c-name">阿棠种花</span><span class="c-time">11-06</span></div>
+          <p class="c-text">阳台那盆入秋后反应明显变慢，18℃ 那组数据对上了，23 分钟不止。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">Z</span><span class="c-name">Zoe的实验本</span><span class="c-time">11-06</span></div>
+          <p class="c-text">气流那档 11% 感觉还是高估了，我们电扇最低档吹了半天一片都没合。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">老</span><span class="c-name">老周修枝</span><span class="c-time">11-05</span></div>
+          <p class="c-text">浇水后半小时内碰它，恢复快得很。土干的时候慢得离谱，这个变量表里没写。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">南</span><span class="c-name">南窗叶影</span><span class="c-time">11-05</span></div>
+          <p class="c-text">习惯化那个我信。连续拍了六次，第六次明显懒。间隔十五分钟确实还没缓过来。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">小</span><span class="c-name">小满不急</span><span class="c-time">11-04</span></div>
+          <p class="c-text">波形那段看得半懂。带通滤波把慢波削掉这件事，之前完全没意识到。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">K</span><span class="c-name">Keke拍植物</span><span class="c-time">11-04</span></div>
+          <p class="c-text">84 帧那条序列拍得干净。我拍的总是有反光，光源角度还得再调。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">何</span><span class="c-name">何同学</span><span class="c-time">11-03</span></div>
+          <p class="c-text">镊子组 98% 有点夸张，我们三个人轮流夹，力度不一样，结果差挺多。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">麦</span><span class="c-name">麦田边的猫</span><span class="c-time">11-03</span></div>
+          <p class="c-text">纯路过。含羞草小时候在老家院子到处都是，踩一脚全趴下，挺壮观。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">赵</span><span class="c-name">赵工读表</span><span class="c-time">11-02</span></div>
+          <p class="c-text">置信区间那张表做得实在。64% 和 76% 不能比高低，这点很多人会看错。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">七</span><span class="c-name">七号温室</span><span class="c-time">11-02</span></div>
+          <p class="c-text">红光补光确实干扰小，但拍出来颜色怪，后期还得校一遍。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">吴</span><span class="c-name">吴老师自然营</span><span class="c-time">11-01</span></div>
+          <p class="c-text">亲子营用慢动作那套，五岁小孩也能看明白羽片是一对一对合的。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">唐</span><span class="c-name">唐小满</span><span class="c-time">10-31</span></div>
+          <p class="c-text">AD8232 那套我照着做了，基线漂移真是最大障碍，静置五分钟这句是经验之谈。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">树</span><span class="c-name">树下听风</span><span class="c-time">10-30</span></div>
+          <p class="c-text">测恢复时长只记一个数这事我干过，后来想对比温度和光照，发现根本没法用。</p>
+        </div>
+        <div class="comment">
+          <div class="c-head"><span class="avatar">雁</span><span class="c-name">雁南飞</span><span class="c-time">10-28</span></div>
+          <p class="c-text">幼苗那组有意思，反应慢但恢复快，是不是细胞数量少导致扩散路径短？纯猜。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="block" id="news">
+      <div class="block-head">
+        <h2>含羞草研究相关资讯</h2>
+      </div>
+      <ul class="news-list">
+        <li>
+          <div class="n-meta"><time datetime="2026-11-06">2026-11-06</time> · 校园科学</div>
+          <a class="n-title" href="/#news">杭州三所中学把含羞草实验并入七年级生物拓展课</a>
+          <p class="n-sum">涉及 11 个班、约 480 名学生，统一使用 240fps 手机拍摄方案，课后提交记录单占比 87%。</p>
+        </li>
+        <li>
+          <div class="n-meta"><time datetime="2026-11-03">2026-11-03</time> · 设备方案</div>
+          <a class="n-title" href="/#news">AD8232 心电模块改装电位采集的成本降到 180 元以内</a>
+          <p class="n-sum">某开源硬件社区 10 月 30 日发布的接线图，把电极更换为一次性心电贴，单次实验耗材约 3 元。</p>
+        </li>
+        <li>
+          <div class="n-meta"><time datetime="2026-10-29">2026-10-29</time> · 方法讨论</div>
+          <a class="n-title" href="/#news">恢复时长测量口径不统一引发讨论</a>
+          <p class="n-sum">一份对比三种口径的记录显示，同一次闭合事件的最大差值达 9 分钟，建议论文中注明口径类型。</p>
+        </li>
+        <li>
+          <div class="n-meta"><time datetime="2026-10-24">2026-10-24</time> · 物种观察</div>
+          <a class="n-title" href="/#news">南方城市野生含羞草分布范围北移约 60 公里</a>
+          <p class="n-sum">某高校 10 月野外记录对比 2016 年数据，新增记录点 14 处，多集中在城市绿化带边缘。</p>
+        </li>
+        <li>
+          <div class="n-meta"><time datetime="2026-10-20">2026-10-20</time> · 课堂实践</div>
+          <a class="n-title" href="/#news">亲子自然营推出含羞草观察半日课程</a>
+          <p class="n-sum">首期 26 组家庭参加，课程含 15 分钟触碰实验和 20 分钟慢动作回放，复购率约 40%。</p>
+        </li>
+        <li>
+          <div class="n-meta"><time datetime="2026-10-16">2026-10-16</time> · 记录规范</div>
+          <a class="n-title" href="/#news">电极贴附标准图发布，附三个角度示意照片</a>
+          <p class="n-sum">明确叶枕外侧 2 毫米、避开主脉的位置要求，并给出参考电极的推荐间距为 15 毫米。</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="block" id="rec">
+      <div class="block-head">
+        <h2>相关方向与条目</h2>
+      </div>
+      <div class="rec-tags">
+        <a href="/#deep">变异电位慢波成分</a>
+        <a href="/#picks">一次性心电贴替代方案</a>
+        <a href="/#guide">观察记录单模板</a>
+        <a href="/#deep">习惯化持续时间</a>
+        <a href="/#picks">红光照明夜间采样</a>
+        <a href="/#picks">幼苗期反应速度</a>
+        <a href="/#faq">恢复时长三种口径</a>
+        <a href="/#submit">慢动作素材投稿</a>
+      </div>
+    </section>
+
+    <!-- 11 榜单 -->
+    <section class="block" id="rank">
+      <div class="block-head">
+        <h2>10 月实验记录复现榜</h2>
+      </div>
+      <p class="block-sub">按 10-01 至 10-31 期间被其他实验者复现的次数排序，复现指用原方法得到方向一致的结论。</p>
+      <ol class="rank-list">
+        <li><span class="rank-name">四类刺激触碰阈值对照<small>棉签/镊子/水滴/气流</small></span><span class="rank-val">28 次</span></li>
+        <li><span class="rank-name">复叶恢复延时序列<small>25℃ 恒温箱 10 秒/帧</small></span><span class="rank-val">21 次</span></li>
+        <li><span class="rank-name">18℃ 与 25℃ 双组对照<small>半张角口径</small></span><span class="rank-val">17 次</span></li>
+        <li><span class="rank-name">叶枕电位 42 组波形台账<small>AD8232 采集</small></span><span class="rank-val">14 次</span></li>
+        <li><span class="rank-name">水滴冲击落点关系<small>5 微升与 20 微升</small></span><span class="rank-val">11 次</span></li>
+        <li><span class="rank-name">夜间闭合角记录<small>红光照明 6 时间点</small></span><span class="rank-val">9 次</span></li>
+        <li><span class="rank-name">幼苗期与成株期对比<small>第 30 天与第 90 天</small></span><span class="rank-val">7 次</span></li>
+        <li><span class="rank-name">连续触碰习惯化观察<small>间隔 15 分钟</small></span><span class="rank-val">6 次</span></li>
+      </ol>
+    </section>
+
+    <!-- 12 投稿互动 -->
+    <section class="submit-panel" id="submit">
+      <h2>投稿你的含羞草记录</h2>
+      <p>接受慢动作素材、恢复时长记录表、电极波形截图和课堂方案。写清植株状态、刺激方式与测量口径三项，记录会进入月度复现榜候选。文本类投稿建议直接附拍摄时间戳。</p>
+      <form class="submit-form" id="submitForm">
+        <input type="text" name="title" placeholder="记录标题，例如：棉签轻扫 30 次触发率" aria-label="记录标题" required>
+        <select name="type" aria-label="记录类型">
+          <option value="电位">电位记录</option>
+          <option value="阈值">阈值对照</option>
+          <option value="恢复">恢复观测</option>
+          <option value="课堂">课堂方案</option>
+          <option value="影像">延时影像</option>
+        </select>
+        <button type="submit">提交记录</button>
+      </form>
+      <div class="form-msg" id="formMsg">已记录投稿标题，接入审核后会出现在观测动态里。</div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="right-rail">
+    <div class="side-card">
+      <h2>本周高频条目</h2>
+      <ol class="side-hot">
+        <li><span class="num">1</span><a href="/#picks">四类刺激触碰阈值对照表</a></li>
+        <li><span class="num">2</span><a href="/#picks">复叶 14 分钟恢复延时序列</a></li>
+        <li><span class="num">3</span><a href="/#deep">恢复时长三种口径对照</a></li>
+        <li><span class="num">4</span><a href="/#picks">AD8232 电极贴附标准图</a></li>
+        <li><span class="num">5</span><a href="/#picks">夜间 22:00 闭合角记录</a></li>
+        <li><span class="num">6</span><a href="/#guide">45 分钟课堂观察记录单</a></li>
+      </ol>
+    </div>
+    <div class="side-card">
+      <h2>采样时间线（本周）</h2>
+      <ul class="side-timeline">
+        <li><time datetime="2026-11-07">11-07</time><b>夜间电位采样</b>22:00—02:00，12 组</li>
+        <li><time datetime="2026-11-06">11-06</time><b>气流阈值补测</b>五档强度，80 次</li>
+        <li><time datetime="2026-11-04">11-04</time><b>恒温箱延时拍摄</b>84 帧，14 分钟</li>
+        <li><time datetime="2026-11-02">11-02</time><b>红光照明闭合角</b>6 个时间点</li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h2>记录规范提示</h2>
+      <p class="side-note">一组数据要能被别人复现，至少写清 <b>样本量</b>、<b>刺激参数</b>、<b>恢复口径</b>。电极实验另加 <b>贴附位置</b> 与 <b>增益设置</b>。缺任何一项，结论只能算参考。</p>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#2f8c5c"/>
+          <path d="M32 52V30M32 30C32 30 18 28 16 16c12 0 16 8 16 14zM32 34c0 0 14-2 16-14-12 0-16 8-16 14z" fill="none" stroke="#c8f0a8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <strong>91含羞草实验所</strong>
+      </div>
+      <p class="footer-pos">记录覆盖 2025 年 3 月至 2026 年 11 月，条目以电位波形、阈值对照、恢复延时三类原始数据为主，辅以课堂方案与设备改装笔记。每周三、周日各更新一次台账，节假日顺延。</p>
+    </div>
+    <div class="footer-col">
+      <h3>实验方向</h3>
+      <a href="/#picks">叶枕电位记录</a>
+      <a href="/#picks">触碰阈值对照</a>
+      <a href="/#picks">复叶恢复观测</a>
+      <a href="/#picks">昼夜节律实验</a>
+    </div>
+    <div class="footer-col">
+      <h3>参与</h3>
+      <a href="/#submit">投稿记录</a>
+      <a href="/#submit">上传延时素材</a>
+      <a href="/#comments">实验者留言</a>
+      <a href="/#rank">复现榜</a>
+    </div>
+    <div class="footer-col">
+      <h3>参考</h3>
+      <a href="/#deep">方法学分歧</a>
+      <a href="/#guide">观察指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#news">相关资讯</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>条目与数据为垂类示例内容，用于方法讨论与教学参考。最后核对：2026-11-08。</span>
+    <span>© 2026 91含羞草实验所 · 内容整理与记录归档</span>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  'use strict';
+
+  /* 移动端抽屉 */
+  var drawer = document.getElementById('mobileDrawer');
+  var hamburger = document.getElementById('hamburger');
+  var drawerMask = document.getElementById('drawerMask');
+  var drawerClose = document.getElementById('drawerClose');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+    drawerClose.focus();
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.focus();
+  }
+  hamburger.addEventListener('click', openDrawer);
+  drawerMask.addEventListener('click', closeDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setTimeout(closeDrawer, 60); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+  });
+
+  /* 回到顶部 */
+  var backTop = document.getElementById('backTop');
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        backTop.classList.toggle('show', window.scrollY > window.innerHeight * 0.9);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, {passive:true});
+  backTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 侧栏当前板块高亮 */
+  var railLinks = Array.prototype.slice.call(document.querySelectorAll('.rail-nav a'));
+  var sections = railLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          railLinks.forEach(function(a){
+            a.classList.toggle('current', a.getAttribute('href') === '/#' + en.target.id);
+          });
+        }
+      });
+    }, {rootMargin:'-120px 0px -60% 0px', threshold:0});
+    sections.forEach(function(s){ io.observe(s); });
+  }
+
+  /* 本地搜索 */
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var searchResult = document.getElementById('searchResult');
+
+  var index = [];
+  document.querySelectorAll('.pick-card, .updates li, .news-list li, .faq-list details, .rank-list li, .rec-tags a, .cat-item').forEach(function(el){
+    var titleEl = el.querySelector('h3, .u-title, .n-title, summary, .rank-name, b, .cat-item b');
+    var text = (el.textContent || '').replace(/\s+/g,' ').trim();
+    var title = titleEl ? titleEl.textContent.trim() : text.slice(0,24);
+    var target = el.closest('section[id], section.submit-panel[id]');
+    index.push({title:title, text:text, id: target ? target.id : 'top'});
+  });
+
+  function runSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchResult.classList.remove('open');
+      searchResult.innerHTML = '';
+      return;
+    }
+    var hits = index.filter(function(it){
+      return it.title.indexOf(q) > -1 || it.text.indexOf(q) > -1;
+    }).slice(0, 8);
+    searchResult.innerHTML = '';
+    if(hits.length === 0){
+      var empty = document.createElement('div');
+      empty.className = 'sr-empty';
+      empty.textContent = '没有找到含“' + q + '”的条目，试试“阈值”“恢复”“电位”。';
+      searchResult.appendChild(empty);
+    } else {
+      var tip = document.createElement('div');
+      tip.className = 'sr-title';
+      tip.textContent = '找到 ' + hits.length + ' 条相关内容';
+      searchResult.appendChild(tip);
+      hits.forEach(function(it){
+        var a = document.createElement('a');
+        a.href = '/#' + it.id;
+        a.textContent = it.title;
+        a.addEventListener('click', function(){
+          searchResult.classList.remove('open');
+        });
+        searchResult.appendChild(a);
+      });
+    }
+    searchResult.classList.add('open');
+  }
+
+  searchBtn.addEventListener('click', runSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); runSearch(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!searchResult.contains(e.target) && e.target !== searchInput && e.target !== searchBtn){
+      searchResult.classList.remove('open');
+    }
+  });
+
+  /* 投稿表单 */
+  var submitForm = document.getElementById('submitForm');
+  var formMsg = document.getElementById('formMsg');
+  submitForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    formMsg.classList.add('show');
+    submitForm.reset();
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"91含羞草实验所",
+  "description":"汇集含羞草触碰闭合实验、叶枕电位记录、触碰阈值对照与复叶恢复延时观测的内容聚合页。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"含羞草被碰后多久会重新张开？",
+      "acceptedAnswer":{"@type":"Answer","text":"25℃ 环境下，半张角的中位时间约 14 分钟，完全恢复约 18—22 分钟。18℃ 时分别延长到 16 分钟和 23 分钟。"}
+    },
+    {
+      "@type":"Question",
+      "name":"为什么同一株含羞草的电位峰值每次都不一样？",
+      "acceptedAnswer":{"@type":"Answer","text":"电极贴附位置是第一变量。叶枕外侧 2 毫米处的峰幅稳定在 12—18 mV，贴到主脉或叶柄中段就会偏离。"}
+    },
+    {
+      "@type":"Question",
+      "name":"用棉签和用镊子触碰，触发率差多少？",
+      "acceptedAnswer":{"@type":"Answer","text":"镊子夹持羽片基部的触发率 98%（60 次），棉签轻扫 76%（80 次），两者置信区间不重叠。"}
+    },
+    {
+      "@type":"Question",
+      "name":"含羞草会记住被碰过吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"短时间内有习惯化现象。连续触碰 5 次后，第 6 次的触发阈值上升，恢复时间拉长，间隔 15 分钟后效应仍未完全消退。"}
+    },
+    {
+      "@type":"Question",
+      "name":"没有专业设备，能做出可用的实验记录吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"手机 240fps 慢动作加打印的观察记录单即可完成闭合顺序和恢复时长记录，关键是固定拍摄距离、光源角度和记录口径。"}
+    },
+    {
+      "@type":"Question",
+      "name":"夜间含羞草的反应和白天的差别在哪？",
+      "acceptedAnswer":{"@type":"Answer","text":"夜间闭合角更大，恢复更慢。22:00 后闭合角比 18:00 增大 11 度，恢复延后约 9 分钟。"}
+    }
+  ]
+}
+</script>
+
+</body>
+  </html>
