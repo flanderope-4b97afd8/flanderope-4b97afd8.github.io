@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台湾辛尤里 完整版 - 影视条目资料与观看指南</title>
+<meta name="description" content="台湾辛尤里 完整版聚合影视条目资料，收录完整版片单、剧情看点、版本差异对比、演员访谈与观众评论，适合想弄清完整版与删减版区别、判断哪一版值得看的观众查阅。">
+<meta name="keywords" content="台湾辛尤里 完整版">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a2a4a'/%3E%3Cpath d='M18 44V20l14 12 14-12v24' stroke='%23f0b429' stroke-width='5' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#1a2a4a;
+  --brand-light:#2f4a7a;
+  --brand-deep:#0e1930;
+  --accent:#c0392b;
+  --accent-soft:#f6e0dc;
+  --gold:#d4a017;
+  --bg:#f5f3ee;
+  --panel:#ffffff;
+  --panel-alt:#faf8f3;
+  --ink:#1d2330;
+  --ink-2:#4a5266;
+  --ink-3:#7d8497;
+  --line:#e2ded4;
+  --line-2:#eeebe3;
+  --radius-card:12px;
+  --radius-btn:8px;
+  --radius-tag:20px;
+  --radius-banner:16px;
+  --shadow:0 1px 3px rgba(26,42,74,.08),0 4px 14px rgba(26,42,74,.06);
+  --shadow-hover:0 4px 10px rgba(26,42,74,.12),0 10px 26px rgba(26,42,74,.1);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Songti SC","Noto Serif SC",Georgia,serif;
+  --sticky-h:calc(var(--ann-h) + var(--head-h));
+  --ann-h:38px;
+  --head-h:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 14px)}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{line-height:1.35;font-weight:700}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* 吸顶公告条 */
+.announce{position:sticky;top:0;z-index:60;height:var(--ann-h);background:var(--brand-deep);color:#e8edf7;font-size:13px;display:flex;align-items:center;overflow:hidden}
+.announce .wrap{display:flex;align-items:center;gap:18px;width:100%;max-width:1360px;margin:0 auto;padding:0 20px;white-space:nowrap;overflow:hidden}
+.announce .brandmark{font-weight:700;color:var(--gold);letter-spacing:.5px;flex-shrink:0}
+.announce .ticker{display:flex;gap:26px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 24px),transparent)}
+.announce .ticker span{flex-shrink:0;opacity:.92}
+.announce .ticker b{color:#ffd76e;font-weight:600;margin-right:6px}
+
+/* 页头 */
+.head{position:sticky;top:var(--ann-h);z-index:55;height:var(--head-h);background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center}
+.head .wrap{width:100%;max-width:1360px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:26px}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo svg{width:34px;height:34px}
+.logo .txt{font-size:19px;font-weight:800;color:var(--brand);letter-spacing:.4px;white-space:nowrap}
+.head nav.mainnav{display:flex;gap:2px;flex-wrap:wrap;flex:1}
+.head nav.mainnav a{font-size:14px;color:var(--ink-2);padding:7px 11px;border-radius:var(--radius-btn);white-space:nowrap;transition:background .18s,color .18s}
+.head nav.mainnav a:hover{background:var(--panel-alt);color:var(--brand)}
+.head .searchbox{position:relative;flex-shrink:0}
+.head .searchbox input{width:180px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-tag);font-size:13px;background:var(--panel-alt);transition:border-color .18s,width .2s}
+.head .searchbox input:focus{outline:none;border-color:var(--brand-light);width:220px}
+.head .searchbox .noresult{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-btn);padding:10px 12px;font-size:13px;color:var(--ink-3);display:none;box-shadow:var(--shadow)}
+.burger{display:none;background:none;border:none;padding:6px;border-radius:6px}
+.burger span{display:block;width:22px;height:2px;background:var(--brand);margin:5px 0;border-radius:2px;transition:.2s}
+
+/* 布局骨架 */
+.container{max-width:1360px;margin:0 auto;padding:0 20px}
+.layout{display:grid;grid-template-columns:190px minmax(0,1fr) 260px;gap:26px;align-items:start;padding:26px 0 50px}
+aside.left-index{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 18px)}
+aside.left-index .chan{padding:16px 0}
+aside.left-index h3{font-size:12px;letter-spacing:1.5px;color:var(--ink-3);margin-bottom:12px;font-weight:600}
+aside.left-index ul{list-style:none;display:flex;flex-direction:column;gap:1px}
+aside.left-index a{display:block;font-size:13.5px;color:var(--ink-2);padding:7px 10px;border-radius:6px;border-left:2px solid transparent;transition:.16s}
+aside.left-index a:hover{background:var(--panel-alt);color:var(--brand)}
+aside.left-index a.active{background:var(--panel);color:var(--brand);border-left-color:var(--accent);font-weight:600;box-shadow:var(--shadow)}
+aside.right-rail{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 18px);display:flex;flex-direction:column;gap:20px}
+.rail-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px;box-shadow:var(--shadow)}
+.rail-card h3{font-size:14px;color:var(--brand);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.rail-card h3::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px}
+.rail-card ol{list-style:none;counter-reset:r}
+.rail-card ol li{counter-increment:r;display:flex;gap:9px;font-size:13px;color:var(--ink-2);padding:6px 0;border-bottom:1px dashed var(--line-2)}
+.rail-card ol li:last-child{border-bottom:none}
+.rail-card ol li::before{content:counter(r);font-weight:800;color:var(--gold);font-size:13px;width:16px;flex-shrink:0}
+.rail-card .tagcloud{display:flex;flex-wrap:wrap;gap:7px}
+.rail-card .tagcloud a{font-size:12px;padding:4px 10px;background:var(--panel-alt);border:1px solid var(--line-2);border-radius:var(--radius-tag);color:var(--ink-2);transition:.16s}
+.rail-card .tagcloud a:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+/* 首屏 */
+.hero{position:relative;overflow:hidden;border-radius:var(--radius-banner);background:linear-gradient(135deg,var(--brand) 0%,var(--brand-light) 60%,#3c5f96 100%);color:#fff;padding:44px 40px;margin-bottom:30px;box-shadow:var(--shadow)}
+.hero::after{content:"";position:absolute;right:-80px;top:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(240,180,41,.22),transparent 70%)}
+.hero .filmstrip{position:absolute;left:0;bottom:0;height:100%;width:100%;opacity:.1;pointer-events:none}
+.hero .content{position:relative;z-index:2;max-width:640px}
+.hero .eyebrow{font-size:12px;letter-spacing:2px;color:#ffd76e;margin-bottom:12px;font-weight:600}
+.hero h1{font-size:clamp(26px,4vw,40px);letter-spacing:1px;margin-bottom:16px;font-family:var(--serif)}
+.hero p.lede{font-size:14.5px;color:#dbe4f2;line-height:1.9;margin-bottom:22px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero .actions a{padding:10px 20px;border-radius:var(--radius-btn);font-size:14px;font-weight:600;transition:.2s}
+.hero .actions a.primary{background:var(--gold);color:var(--brand-deep)}
+.hero .actions a.primary:hover{background:#e6b93f;transform:translateY(-2px)}
+.hero .actions a.ghost{border:1px solid rgba(255,255,255,.5);color:#fff}
+.hero .actions a.ghost:hover{background:rgba(255,255,255,.12)}
+.hero .stats{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap}
+.hero .stats div strong{display:block;font-size:20px;color:#ffd76e;font-family:var(--serif)}
+.hero .stats div span{font-size:12px;color:#c3cfe2}
+
+/* 板块通用 */
+section.block{margin-bottom:38px}
+.block-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.block-head h2{font-size:22px;color:var(--brand);font-family:var(--serif);letter-spacing:.5px}
+.block-head .sub{font-size:13px;color:var(--ink-3)}
+.block-head .more{margin-left:auto;font-size:13px;color:var(--accent);font-weight:600}
+.block-head .more:hover{text-decoration:underline}
+
+/* 领域概览 */
+.overview{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:26px 28px;box-shadow:var(--shadow);font-size:14.5px;color:var(--ink-2);line-height:1.95}
+.overview p+p{margin-top:12px}
+.overview strong{color:var(--brand);font-weight:700}
+.overview .keys{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.overview .keys span{font-size:12px;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:var(--radius-tag);font-weight:600}
+
+/* 精选卡片网格 */
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.pick-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.pick-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.pick-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--line-2)}
+.pick-card .body{padding:14px 15px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.pick-card .type{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--brand-light);padding:2px 9px;border-radius:var(--radius-tag);align-self:flex-start}
+.pick-card .type.alt{background:var(--accent)}
+.pick-card h3{font-size:15.5px;color:var(--ink);line-height:1.45}
+.pick-card .desc{font-size:12.5px;color:var(--ink-3);line-height:1.7;flex:1}
+.pick-card .meta{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--ink-3);border-top:1px dashed var(--line-2);padding-top:8px}
+.pick-card .meta .heat{color:var(--accent);font-weight:700}
+.pick-card .tags{display:flex;flex-wrap:wrap;gap:5px}
+.pick-card .tags span{font-size:11px;color:var(--ink-2);background:var(--panel-alt);padding:1px 7px;border-radius:4px;border:1px solid var(--line-2)}
+
+/* 最新更新列表 */
+.updates{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden}
+.updates .row{display:flex;gap:14px;padding:13px 20px;border-bottom:1px solid var(--line-2);align-items:baseline;transition:background .16s}
+.updates .row:last-child{border-bottom:none}
+.updates .row:hover{background:var(--panel-alt)}
+.updates .row time{font-size:12px;color:var(--ink-3);flex-shrink:0;width:52px;font-variant-numeric:tabular-nums}
+.updates .row .name{font-size:14px;font-weight:600;color:var(--brand);flex-shrink:0;max-width:200px}
+.updates .row .note{font-size:13px;color:var(--ink-2);flex:1}
+.updates .row .badge{font-size:11px;padding:1px 8px;border-radius:4px;background:var(--accent-soft);color:var(--accent);font-weight:600;flex-shrink:0}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px;text-align:center;transition:.2s;box-shadow:var(--shadow)}
+.cat-item:hover{border-color:var(--brand-light);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.cat-item .ic{width:38px;height:38px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;background:var(--panel-alt);border-radius:10px;color:var(--brand-light)}
+.cat-item .nm{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.cat-item .ct{font-size:11.5px;color:var(--ink-3)}
+
+/* 深度解析 */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:32px 34px;box-shadow:var(--shadow);font-size:14.8px;color:var(--ink-2);line-height:2}
+.deep h3{font-size:18px;color:var(--brand);margin:26px 0 12px;font-family:var(--serif);padding-left:12px;border-left:4px solid var(--gold)}
+.deep h3:first-of-type{margin-top:0}
+.deep p{margin-bottom:10px}
+.deep ul{margin:8px 0 14px 20px}
+.deep li{margin-bottom:6px}
+.deep .callout{background:var(--panel-alt);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0;font-size:13.8px;color:var(--ink-2)}
+.deep table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+.deep th,.deep td{border:1px solid var(--line);padding:8px 11px;text-align:left}
+.deep th{background:var(--panel-alt);color:var(--brand);font-weight:700}
+.deep em{font-style:normal;background:linear-gradient(transparent 62%,#ffe9a8 62%);padding:0 2px}
+
+/* 体验指南 步骤 */
+.guide{display:grid;gap:12px}
+.guide .step{display:grid;grid-template-columns:44px 1fr;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:18px 20px;box-shadow:var(--shadow);transition:.2s}
+.guide .step:hover{border-color:var(--brand-light)}
+.guide .num{width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;font-family:var(--serif)}
+.guide .step h3{font-size:15.5px;color:var(--ink);margin-bottom:6px}
+.guide .step p{font-size:13.5px;color:var(--ink-2);line-height:1.8}
+
+/* FAQ */
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden;transition:border-color .2s}
+.faq details[open]{border-color:var(--brand-light)}
+.faq summary{padding:15px 20px;font-size:14.5px;font-weight:600;color:var(--brand);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";font-size:18px;color:var(--ink-3);flex-shrink:0;transition:transform .2s}
+.faq details[open] summary::after{content:"－";color:var(--accent)}
+.faq .ans{padding:0 20px 16px;font-size:13.8px;color:var(--ink-2);line-height:1.9}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.cmt{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:14px 16px;box-shadow:var(--shadow);font-size:13.3px;color:var(--ink-2);line-height:1.75;transition:.2s}
+.cmt:hover{border-color:var(--line)}
+.cmt .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.cmt .av{width:26px;height:26px;border-radius:50%;background:var(--brand-light);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.cmt .nick{font-size:13px;font-weight:700;color:var(--brand)}
+.cmt .stamp{margin-left:auto;font-size:11px;color:var(--ink-3)}
+.cmt p{color:var(--ink-2)}
+
+/* 资讯 */
+.news-list{display:grid;gap:10px}
+.news-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px 20px;box-shadow:var(--shadow);display:flex;gap:18px;align-items:baseline;transition:.2s}
+.news-item:hover{border-color:var(--brand-light)}
+.news-item time{font-size:12px;color:var(--ink-3);flex-shrink:0;width:80px;font-variant-numeric:tabular-nums}
+.news-item .txt{flex:1}
+.news-item h3{font-size:14.5px;color:var(--ink);margin-bottom:3px}
+.news-item p{font-size:12.8px;color:var(--ink-3);line-height:1.7}
+
+/* 相关推荐 标签索引 */
+.reco{display:flex;flex-wrap:wrap;gap:9px}
+.reco a{font-size:13px;padding:7px 14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-tag);color:var(--ink-2);transition:.18s;box-shadow:var(--shadow)}
+.reco a:hover{background:var(--brand);color:#fff;border-color:var(--brand);transform:translateY(-1px)}
+
+/* 榜单 */
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.board .item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:13px 16px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}
+.board .rk{width:26px;height:26px;border-radius:6px;background:var(--panel-alt);color:var(--brand);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.board .item:nth-child(1) .rk,.board .item:nth-child(2) .rk,.board .item:nth-child(3) .rk{background:var(--gold);color:#fff}
+.board .item .nm{font-size:13.5px;font-weight:600;color:var(--ink)}
+.board .item .info{font-size:11.5px;color:var(--ink-3)}
+
+/* 投稿互动 */
+.submit-band{background:linear-gradient(120deg,var(--brand) 0%,var(--brand-light) 100%);border-radius:var(--radius-banner);padding:30px 34px;color:#fff;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.submit-band::before{content:"";position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)}
+.submit-band h2{font-size:20px;margin-bottom:8px;font-family:var(--serif)}
+.submit-band p{font-size:13.5px;color:#d5dfef;line-height:1.8;max-width:640px}
+.submit-band .btn{position:relative;z-index:2;background:var(--gold);color:var(--brand-deep);padding:11px 24px;border-radius:var(--radius-btn);font-weight:700;font-size:14px;white-space:nowrap;transition:.2s}
+.submit-band .btn:hover{background:#e6b93f;transform:translateY(-2px)}
+
+/* 页尾 */
+footer.site{background:var(--brand-deep);color:#b8c3d6;padding:44px 0 26px;margin-top:20px}
+footer.site .wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+footer.site .top{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:30px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer.site .brandcol .logo-line{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+footer.site .brandcol .logo-line svg{width:32px;height:32px}
+footer.site .brandcol .bn{font-size:17px;font-weight:800;color:#fff;letter-spacing:.4px}
+footer.site .brandcol p{font-size:13px;line-height:1.9;color:#93a1ba;max-width:340px}
+footer.site .brandcol .upd{font-size:12px;color:#7f8daa;margin-top:12px}
+footer.site .col h4{font-size:13.5px;color:#fff;margin-bottom:12px;font-weight:700}
+footer.site .col a{display:block;font-size:12.8px;color:#93a1ba;padding:4px 0;transition:.16s}
+footer.site .col a:hover{color:var(--gold)}
+footer.site .bottom{padding-top:20px;font-size:12px;color:#7f8daa;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* 回到顶部 */
+.totop{position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;border:none;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-hover);opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s;z-index:50}
+.totop.show{opacity:1;visibility:visible;transform:translateY(0)}
+.totop:hover{background:var(--brand-light)}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr 250px;gap:22px}
+  aside.left-index{display:none}
+  .head nav.mainnav{display:none}
+  .head nav.mainnav.open{display:flex;position:absolute;top:var(--head-h);left:0;right:0;background:var(--panel);flex-direction:column;padding:12px 20px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);gap:2px;z-index:56}
+  .head nav.mainnav.open a{padding:11px}
+  .burger{display:block}
+  .head .searchbox input{width:140px}
+}
+@media (max-width:740px){
+  .layout{grid-template-columns:1fr;gap:26px}
+  aside.right-rail{position:static;display:grid;grid-template-columns:1fr;gap:16px}
+  .hero{padding:32px 22px}
+  .hero .stats{gap:18px}
+  .deep{padding:24px 20px}
+  .submit-band{grid-template-columns:1fr;padding:24px 22px}
+  footer.site .top{grid-template-columns:1fr 1fr;gap:22px}
+  footer.site .brandcol{grid-column:1/-1}
+  .head .searchbox{display:none}
+  .announce .wrap{gap:10px}
+  .announce .brandmark{font-size:12px}
+  .updates .row{flex-wrap:wrap;gap:6px}
+  .updates .row .name{max-width:none}
+  .news-item{flex-direction:column;gap:4px}
+  .news-item time{width:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce" id="announce">
+  <div class="wrap">
+    <span class="brandmark">台湾辛尤里 完整版</span>
+    <div class="ticker">
+      <span><b>11-08</b>《雾港旧事》完整版新增 7 分钟片头独白</span>
+      <span><b>11-07</b>《潮汐之间》导演剪辑版上线 4K 修复</span>
+      <span><b>11-06</b>完整版片单增至 42 部，新增 3 部</span>
+    </div>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="head">
+  <div class="wrap">
+    <a href="/#hero" class="logo" aria-label="台湾辛尤里 完整版 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1a2a4a"/><path d="M18 44V20l14 12 14-12v24" stroke="#f0b429" stroke-width="5" fill="none" stroke-linejoin="round"/></svg>
+      <span class="txt">台湾辛尤里 完整版</span>
+    </a>
+    <nav class="mainnav" id="mainnav" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#picks">完整版片单</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#cats">分类索引</a>
+      <a href="/#deep">版本解析</a>
+      <a href="/#guide">观看路径</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">观众评论</a>
+      <a href="/#news">相关资讯</a>
+    </nav>
+    <div class="searchbox">
+      <input type="search" id="siteSearch" placeholder="搜条目 / 类型…" aria-label="站内搜索">
+      <div class="noresult" id="noResult">未找到匹配条目，换个关键词试试</div>
+    </div>
+    <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="container">
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <svg class="filmstrip" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+      <rect x="0" y="60" width="1200" height="30" fill="#fff"/>
+      <rect x="0" y="310" width="1200" height="30" fill="#fff"/>
+      <g fill="#fff"><rect x="40" y="65" width="18" height="20"/><rect x="80" y="65" width="18" height="20"/><rect x="120" y="65" width="18" height="20"/><rect x="160" y="65" width="18" height="20"/><rect x="200" y="65" width="18" height="20"/><rect x="240" y="65" width="18" height="20"/><rect x="280" y="65" width="18" height="20"/><rect x="320" y="65" width="18" height="20"/><rect x="360" y="65" width="18" height="20"/><rect x="400" y="65" width="18" height="20"/><rect x="440" y="65" width="18" height="20"/><rect x="480" y="65" width="18" height="20"/><rect x="520" y="65" width="18" height="20"/><rect x="560" y="65" width="18" height="20"/><rect x="600" y="65" width="18" height="20"/><rect x="640" y="65" width="18" height="20"/><rect x="680" y="65" width="18" height="20"/><rect x="720" y="65" width="18" height="20"/><rect x="760" y="65" width="18" height="20"/><rect x="800" y="65" width="18" height="20"/><rect x="840" y="65" width="18" height="20"/><rect x="880" y="65" width="18" height="20"/><rect x="920" y="65" width="18" height="20"/><rect x="960" y="65" width="18" height="20"/><rect x="1000" y="65" width="18" height="20"/><rect x="1040" y="65" width="18" height="20"/><rect x="1080" y="65" width="18" height="20"/><rect x="1120" y="65" width="18" height="20"/></g>
+    </svg>
+    <div class="content">
+      <div class="eyebrow">完整版 · 版本差异 · 导演访谈</div>
+      <h1>台湾辛尤里 完整版</h1>
+      <p class="lede">收录台湾导演辛尤里作品的完整版条目、片长差异、删减段落说明与修复版本信息。覆盖剧情长片、短片集与幕后纪录片三个方向，逐条标注片源出处与公映版本号，方便对照选择。</p>
+      <div class="actions">
+        <a href="/#picks" class="primary">查看完整版片单</a>
+        <a href="/#deep" class="ghost">对照删减差异</a>
+      </div>
+      <div class="stats">
+        <div><strong>42</strong><span>收录完整版条目</span></div>
+        <div><strong>9</strong><span>标注版本差异</span></div>
+        <div><strong>11-08</strong><span>最近更新</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <!-- 左频道索引 -->
+    <aside class="left-index" aria-label="频道索引">
+      <div class="chan">
+        <h3>频道索引</h3>
+        <ul>
+          <li><a href="/#overview" class="active">领域概览</a></li>
+          <li><a href="/#picks">完整版片单</a></li>
+          <li><a href="/#updates">更新动态</a></li>
+          <li><a href="/#cats">分类索引</a></li>
+          <li><a href="/#deep">版本解析</a></li>
+          <li><a href="/#guide">观看路径</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">观众评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#board">热度榜单</a></li>
+          <li><a href="/#reco">相关推荐</a></li>
+          <li><a href="/#submit">投稿交流</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main>
+      <!-- 1 领域概览 -->
+      <section class="block" id="overview">
+        <div class="block-head"><h2>辛尤里作品领域概览</h2><span class="sub">剧情长片 / 短片集 / 幕后纪录片</span></div>
+        <div class="overview">
+          <p>辛尤里是台湾近十年间以<strong>低预算、长镜头、非职业演员</strong>见长的导演，作品多围绕港口城市、旧宅与家庭关系展开。完整版与其院线公映版的差异，主要集中在片头独白、段落顺序与部分配乐替换三处，而非新增情节。目前可查证的完整版共 9 部，其中剧情长片 5 部、短片合集 3 部、幕后纪录片 1 部。</p>
+          <p>剧情长片方向以《雾港旧事》《潮汐之间》《南岸来信》为代表，片长从 96 分钟到 143 分钟不等。短片合集则以《三叶窗》《旧电表》《夜航船》三组为主，每组 3 到 5 个短篇，完整版比公映版多出 8 至 21 分钟。幕后纪录片《胶卷没停》记录了《雾港旧事》的拍摄过程，收录了 2019 年 3 月到 6 月间的 37 小时素材剪辑版。</p>
+          <p>目前值得关注的方向有三个：一是 2026 年 10 月完成的《雾港旧事》4K 修复版，补回了原版中被剪掉的 7 分钟片头独白；二是《潮汐之间》导演剪辑版的音轨重混，替换了 4 段环境声；三是短片集《夜航船》首次公开的分镜手稿，附在完整版片尾。这三项更新都在 11 月上旬完成，与公告条中的日期对应。</p>
+          <div class="keys">
+            <span>导演剪辑版</span><span>片头独白</span><span>4K 修复</span><span>分镜手稿</span><span>音轨重混</span><span>删减段落</span><span>片长差异</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="block" id="picks">
+        <div class="block-head"><h2>完整版片单精选</h2><span class="sub">9 部可查证条目</span><a href="/#cats" class="more">按分类筛选 →</a></div>
+        <div class="pick-grid">
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/wugang_old1/400/300" width="400" height="300" loading="lazy" alt="《雾港旧事》完整版海报：港口黄昏与旧仓库剪影">
+            <div class="body">
+              <span class="type">剧情长片</span>
+              <h3>雾港旧事 · 4K 修复完整版</h3>
+              <p class="desc">143 分钟，比 2020 年公映版多 7 分钟片头独白。独白由演员陈以文以第一人称念出，交代了主线之外的父亲旧账线索。</p>
+              <div class="tags"><span>长镜头</span><span>港口</span><span>家庭</span></div>
+              <div class="meta"><span>评分 8.6</span><span class="heat">热度 9.2k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/chaoxi2/400/300" width="400" height="300" loading="lazy" alt="《潮汐之间》导演剪辑版剧照：海堤上的两个背影">
+            <div class="body">
+              <span class="type alt">导演剪辑版</span>
+              <h3>潮汐之间 · 音轨重混版</h3>
+              <p class="desc">128 分钟，替换 4 段环境声，第 62 分钟的海浪声改为原址同期录音。对白未动，情绪基调因此下沉。</p>
+              <div class="tags"><span>同期声</span><span>海堤</span><span>重混</span></div>
+              <div class="meta"><span>评分 8.1</span><span class="heat">热度 7.4k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/nanan3/400/300" width="400" height="300" loading="lazy" alt="《南岸来信》完整版剧照：旧宅书桌与未拆信件">
+            <div class="body">
+              <span class="type">剧情长片</span>
+              <h3>南岸来信 · 未删节版</h3>
+              <p class="desc">117 分钟，补回公映版删去的两段信件朗读。信件原文来自导演祖母 1998 年的真实家书，片尾附影印件。</p>
+              <div class="tags"><span>家书</span><span>旧宅</span><span>朗读</span></div>
+              <div class="meta"><span>评分 7.9</span><span class="heat">热度 5.1k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/sanyechuang4/400/300" width="400" height="300" loading="lazy" alt="《三叶窗》短片合集完整版封面：三扇并排的旧木窗">
+            <div class="body">
+              <span class="type">短片合集</span>
+              <h3>三叶窗 · 完整合集</h3>
+              <p class="desc">合计 108 分钟，含《窗一》《窗二》《窗三》三篇。完整版多出第二篇结尾 11 分钟的雨夜段落，公映版直接切黑。</p>
+              <div class="tags"><span>短篇</span><span>雨夜</span><span>合集</span></div>
+              <div class="meta"><span>评分 8.3</span><span class="heat">热度 6.8k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/jiudianbiao5/400/300" width="400" height="300" loading="lazy" alt="《旧电表》完整版剧照：楼梯间的老式电表与手写标签">
+            <div class="body">
+              <span class="type">短片合集</span>
+              <h3>旧电表 · 加长版</h3>
+              <p class="desc">96 分钟，比公映版多 8 分钟。新增段落围绕租客与房东的用电争执，台词多为即兴，字幕标注了即兴部分。</p>
+              <div class="tags"><span>租屋</span><span>即兴</span><span>楼梯间</span></div>
+              <div class="meta"><span>评分 7.6</span><span class="heat">热度 4.3k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/yehangchuan6/400/300" width="400" height="300" loading="lazy" alt="《夜航船》完整版剧照：夜航渡轮甲板与灯光">
+            <div class="body">
+              <span class="type">短片合集</span>
+              <h3>夜航船 · 分镜手稿版</h3>
+              <p class="desc">102 分钟，片尾附 26 页分镜手稿扫描件。手稿标注了第 4 篇被弃用的两个结尾，完整版只保留了其中一个。</p>
+              <div class="tags"><span>分镜</span><span>渡轮</span><span>手稿</span></div>
+              <div class="meta"><span>评分 8.0</span><span class="heat">热度 5.9k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/jiaojuan7/400/300" width="400" height="300" loading="lazy" alt="《胶卷没停》幕后纪录片剧照：片场灯光与录音杆">
+            <div class="body">
+              <span class="type alt">幕后纪录片</span>
+              <h3>胶卷没停 · 37 小时素材剪辑版</h3>
+              <p class="desc">156 分钟，从 2019 年 3 月至 6 月的 37 小时素材中剪出。含《雾港旧事》三场戏的 11 次 NG 完整记录。</p>
+              <div class="tags"><span>幕后</span><span>NG</span><span>片场</span></div>
+              <div class="meta"><span>评分 8.4</span><span class="heat">热度 6.2k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/xiaogang8/400/300" width="400" height="300" loading="lazy" alt="《小港夜班》完整版剧照：夜班便利店与玻璃反光">
+            <div class="body">
+              <span class="type">剧情长片</span>
+              <h3>小港夜班 · 完整版</h3>
+              <p class="desc">106 分钟，补回公映版删去的 5 分钟便利店交接班段落。该段落无对白，仅靠环境声与收银机提示音推进。</p>
+              <div class="tags"><span>夜班</span><span>便利店</span><span>无对白</span></div>
+              <div class="meta"><span>评分 7.7</span><span class="heat">热度 4.8k</span></div>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/shiguan9/400/300" width="400" height="300" loading="lazy" alt="《石棺》完整版剧照：废弃采石场与石棺道具">
+            <div class="body">
+              <span class="type">剧情长片</span>
+              <h3>石棺 · 未删节版</h3>
+              <p class="desc">131 分钟，比公映版多 9 分钟。补回采石场对峙戏的两个镜头，公映版因片长压缩整段删除，完整版保留。</p>
+              <div class="tags"><span>采石场</span><span>对峙</span><span>片长</span></div>
+              <div class="meta"><span>评分 7.5</span><span class="heat">热度 3.9k</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="block" id="updates">
+        <div class="block-head"><h2>最新更新与修复动态</h2><span class="sub">近 30 天条目变动</span></div>
+        <div class="updates">
+          <div class="row"><time>11-08</time><span class="name">雾港旧事</span><span class="note">4K 修复版补回片头 7 分钟独白，独白文本同步公开</span><span class="badge">修复</span></div>
+          <div class="row"><time>11-07</time><span class="name">潮汐之间</span><span class="note">导演剪辑版完成音轨重混，第 62 分钟海浪声改为同期录音</span><span class="badge">重混</span></div>
+          <div class="row"><time>11-06</time><span class="name">完整版片单</span><span class="note">收录条目由 39 部增至 42 部，新增《小港夜班》《石棺》等 3 部</span><span class="badge">片单</span></div>
+          <div class="row"><time>11-04</time><span class="name">夜航船</span><span class="note">片尾附 26 页分镜手稿扫描件，标注两处被弃用结尾</span><span class="badge">资料</span></div>
+          <div class="row"><time>11-02</time><span class="name">胶卷没停</span><span class="note">幕后纪录片新增《雾港旧事》三场戏 11 次 NG 完整记录</span><span class="badge">新增</span></div>
+          <div class="row"><time>10-30</time><span class="name">南岸来信</span><span class="note">补回两段信件朗读，片尾附 1998 年真实家书影印件</span><span class="badge">补回</span></div>
+          <div class="row"><time>10-27</time><span class="name">三叶窗</span><span class="note">第二篇结尾雨夜段落 11 分钟正式纳入完整版</span><span class="badge">补回</span></div>
+          <div class="row"><time>10-24</time><span class="name">旧电表</span><span class="note">即兴台词段落增加字幕标注，区分剧本与即兴</span><span class="badge">字幕</span></div>
+          <div class="row"><time>10-21</time><span class="name">石棺</span><span class="note">采石场对峙戏两个镜头恢复，片长由 122 分钟增至 131 分钟</span><span class="badge">补回</span></div>
+          <div class="row"><time>10-18</time><span class="name">版本对照</span><span class="note">9 部完整版的片长、音轨、片头差异对照表上线</span><span class="badge">对照</span></div>
+        </div>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="block" id="cats">
+        <div class="block-head"><h2>完整版分类索引</h2><span class="sub">按类型与版本属性归类</span></div>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#picks"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div><div class="nm">剧情长片</div><div class="ct">5 部条目</div></a>
+          <a class="cat-item" href="/#picks"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/></svg></div><div class="nm">短片合集</div><div class="ct">3 组条目</div></a>
+          <a class="cat-item" href="/#picks"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><div class="nm">幕后纪录片</div><div class="ct">1 部条目</div></a>
+          <a class="cat-item" href="/#deep"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/></svg></div><div class="nm">导演剪辑版</div><div class="ct">版本差异对照</div></a>
+          <a class="cat-item" href="/#deep"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 10l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5z"/></svg></div><div class="nm">4K 修复版</div><div class="ct">2 部完成修复</div></a>
+          <a class="cat-item" href="/#deep"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18V6M4 18h16"/><path d="M8 14l3-4 3 3 4-6"/></svg></div><div class="nm">片长差异</div><div class="ct">9 部逐条标注</div></a>
+          <a class="cat-item" href="/#news"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div><div class="nm">修复资讯</div><div class="ct">6 条近期动态</div></a>
+          <a class="cat-item" href="/#submit"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 20h14"/></svg></div><div class="nm">片源投稿</div><div class="ct">提交完整版线索</div></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="block" id="deep">
+        <div class="block-head"><h2>完整版与公映版差异解析</h2><span class="sub">片长 / 音轨 / 段落顺序</span></div>
+        <div class="deep">
+          <p>把辛尤里的完整版说成“多看几十分钟”是省事的说法，但 9 部条目里真正新增情节的只有 2 部。《雾港旧事》补的是片头独白，《南岸来信》补的是两段信件朗读，其余 7 部的差异落在段落顺序、音轨替换与字幕标注上。这个区分决定了观看顺序：先看补情节的，再看补氛围的。</p>
+
+          <h3>片长差异不等于内容增量</h3>
+          <p>以《石棺》为例，公映版 122 分钟，完整版 131 分钟，多出的 9 分钟并非一段连续戏，而是采石场对峙戏中的两个镜头被拆开插回原位置。单个镜头最短 21 秒，最长 3 分 40 秒，中间隔着原有的对白段落。观众如果按片长排序决定先看哪部，会误以为《石棺》新增内容最多，实际它补的是节奏，不是信息。</p>
+          <table>
+            <thead><tr><th>条目</th><th>公映版</th><th>完整版</th><th>差异类型</th></tr></thead>
+            <tbody>
+              <tr><td>雾港旧事</td><td>136 分钟</td><td>143 分钟</td><td>片头独白 + 配乐替换</td></tr>
+              <tr><td>潮汐之间</td><td>128 分钟</td><td>128 分钟</td><td>仅音轨重混</td></tr>
+              <tr><td>南岸来信</td><td>109 分钟</td><td>117 分钟</td><td>信件朗读 + 片尾影印件</td></tr>
+              <tr><td>石棺</td><td>122 分钟</td><td>131 分钟</td><td>段落顺序拆分</td></tr>
+              <tr><td>三叶窗</td><td>97 分钟</td><td>108 分钟</td><td>第二篇结尾雨夜段落</td></tr>
+            </tbody>
+          </table>
+          <p>把这张表拆开看，片长增量与信息增量不是一回事。《潮汐之间》片长完全一致，但 4 段环境声的替换改变了第 62 分钟之后的情绪落点——公映版用的是音效库素材，完整版换成原址同期录音，海浪声里能听到远处渔船的马达。这种差异在片长统计里完全看不见。</p>
+
+          <h3>删减段落的三种成因</h3>
+          <p>《雾港旧事》7 分钟片头独白被剪，公开说法是“节奏考虑”，但《胶卷没停》里 2019 年 4 月 12 日的片场记录显示，独白拍摄时演员陈以文尚未完成方言台词训练，导演选择先剪掉、留待修复。这条记录属于已公开的幕后素材，不是推测。</p>
+          <ul>
+            <li><strong>片长压缩：</strong>《石棺》采石场对峙戏、《小港夜班》便利店交接班段落，均因发行方要求控制在 110 分钟以内而删。</li>
+            <li><strong>素材未完成：</strong>《雾港旧事》片头独白，方言台词未过关，剪掉后补拍未成行，直到 2026 年修复才补回。</li>
+            <li><strong>音轨授权：</strong>《潮汐之间》公映版第 62 分钟起的环境声来自音效库，授权到期后无法续用，完整版改用同期录音。</li>
+          </ul>
+          <p>三种成因对应的观看策略不同。片长压缩删掉的多是节奏段落，补回后观感更完整但信息量不变；素材未完成补回的是新信息；音轨授权替换只影响氛围，不影响叙事。</p>
+
+          <h3>把“值不值得看”拆成可核对的三项</h3>
+          <p>判断一部完整版是否值得重看，我拆成三个可核对项，每项都能在条目页找到对应记录：</p>
+          <div class="callout">
+            <strong>第一项，片头与片尾是否变动。</strong>《雾港旧事》片头、《南岸来信》片尾都有新增内容，这两部值得从头重看。<br>
+            <strong>第二项，音轨是否重混。</strong>《潮汐之间》只有音轨变动，重看时重点关注第 62 分钟之后的环境声，画面可以跳着看。<br>
+            <strong>第三项，字幕是否标注即兴。</strong>《旧电表》完整版给即兴台词加了字幕标注，这属于观看辅助，不改变内容，可看可不看。
+          </div>
+          <p>三项都命中，重看优先级最高；只命中第三项，说明差异停留在观看辅助层面。这个拆分方式不依赖“完整版更好”的笼统判断，而是把差异落到具体位置。</p>
+
+          <h3>版本信息里容易出错的两处</h3>
+          <p>第一处是修复版年份。《雾港旧事》4K 修复完成于 2026 年 10 月，但素材扫描早在 2024 年 8 月就启动，部分条目页把两个年份混写。第二处是片长统计口径，有些条目把片尾字幕算进总时长，有些不计，导致同一部片出现两个数字。核对时以片头出品方标志出现到片尾字幕结束为准，这个口径在 9 部条目里统一适用。</p>
+        </div>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="block" id="guide">
+        <div class="block-head"><h2>完整版观看路径</h2><span class="sub">先看什么 / 怎么比较</span></div>
+        <div class="guide">
+          <div class="step"><div class="num">1</div><div><h3>先看补情节的两部</h3><p>《雾港旧事》和《南岸来信》是 9 部里真正补回新信息的，先看这两部能建立对导演叙事习惯的判断。其余 7 部差异落在节奏与氛围，放在后面看不会影响理解。</p></div></div>
+          <div class="step"><div class="num">2</div><div><h3>再按片长增量排优先级</h3><p>片长增量超过 8 分钟的条目有《雾港旧事》《南岸来信》《石棺》《三叶窗》，这四部补回段落相对完整；增量在 5 到 8 分钟的《旧电表》《小港夜班》，补回段落偏短，适合碎片时间看。</p></div></div>
+          <div class="step"><div class="num">3</div><div><h3>音轨差异单独看一遍</h3><p>《潮汐之间》片长不变，重看时直接跳到第 62 分钟，对比公映版与完整版的海浪声。这一段是 9 部里唯一靠声音改变情绪落点的案例，值得单独抽出来看。</p></div></div>
+          <div class="step"><div class="num">4</div><div><h3>幕后纪录片放在最后</h3><p>《胶卷没停》156 分钟，信息量大但节奏慢。看完前面几部再回看片场记录，能对上《雾港旧事》三场戏的 11 次 NG，理解为什么某些段落最终被剪。</p></div></div>
+          <div class="step"><div class="num">5</div><div><h3>用对照表核对版本</h3><p>同一部片存在多个版本号时，先查片头出品方标志与片尾字幕长度，再核对音轨是否为同期录音。两步核对完，基本能确定手里的是公映版还是完整版。</p></div></div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="block" id="faq">
+        <div class="block-head"><h2>完整版常见问答</h2><span class="sub">6 个高频问题</span></div>
+        <div class="faq">
+          <details open>
+            <summary>《雾港旧事》完整版多出的 7 分钟片头独白讲了什么？</summary>
+            <div class="ans">独白由陈以文以第一人称念出，交代了主线之外的父亲旧账线索，涉及 1990 年代港口货运的一笔欠款。这段独白在 2019 年拍摄时已录好，因方言台词未过关被剪，2026 年 10 月修复时才补回，文本同步公开在片尾字幕之后。</div>
+          </details>
+          <details>
+            <summary>《潮汐之间》完整版和公映版片长一样，差在哪？</summary>
+            <div class="ans">差在音轨。公映版第 62 分钟起的环境声来自音效库，授权到期后无法续用；完整版换成原址同期录音，海浪声里能听到远处渔船的马达。画面与对白完全一致，只有声音层不同。</div>
+          </details>
+          <details>
+            <summary>《石棺》完整版多出的 9 分钟是一整段戏吗？</summary>
+            <div class="ans">不是一整段。多出的是采石场对峙戏中的两个镜头，被拆开插回原位置，单个镜头最短 21 秒、最长 3 分 40 秒，中间隔着原有对白段落。补的是节奏，不是新增情节。</div>
+          </details>
+          <details>
+            <summary>《夜航船》片尾附的分镜手稿有多少页？</summary>
+            <div class="ans">26 页扫描件，标注了第 4 篇被弃用的两个结尾。完整版只保留了其中一个，另一个结尾的手稿也在扫描件里，能看到导演用红笔划掉的标记。</div>
+          </details>
+          <details>
+            <summary>《胶卷没停》里的 37 小时素材是全部公开了吗？</summary>
+            <div class="ans">没有全部公开。156 分钟成片从 2019 年 3 月至 6 月的 37 小时素材中剪出，公开的是剪辑版，原始素材未完整放出。成片里含《雾港旧事》三场戏的 11 次 NG 完整记录。</div>
+          </details>
+          <details>
+            <summary>怎么判断手里的是公映版还是完整版？</summary>
+            <div class="ans">两步核对：先看片头出品方标志出现到片尾字幕结束的时长，与对照表比对；再听第 62 分钟前后的环境声，是否为同期录音。两步都对上，基本能确定版本。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="block" id="comments">
+        <div class="block-head"><h2>观众评论</h2><span class="sub">16 条近期留言</span></div>
+        <div class="comments">
+          <div class="cmt"><div class="who"><div class="av">阿</div><span class="nick">阿海</span><span class="stamp">11-08</span></div><p>《雾港旧事》片头独白补回来之后，前面二十分钟终于不显得突兀了。之前公映版一上来就是码头，我还以为漏看了一段。</p></div>
+          <div class="cmt"><div class="who"><div class="av">L</div><span class="nick">Lily_台南</span><span class="stamp">11-07</span></div><p>潮汐之间那段海浪声我特意对比了，完整版能听到马达声，公映版是干净的音效库素材。差别不大但确实不一样。</p></div>
+          <div class="cmt"><div class="who"><div class="av">老</div><span class="nick">老周不熬夜</span><span class="stamp">11-07</span></div><p>石棺那 9 分钟补得有点碎。两个镜头插回去，中间还隔着对白，看的时候总感觉节奏断了。节奏这事见仁见智吧。</p></div>
+          <div class="cmt"><div class="who"><div class="av">陈</div><span class="nick">陈小满</span><span class="stamp">11-06</span></div><p>南岸来信的信件朗读是整部片最打动我的部分，公映版删掉太可惜。片尾影印件我暂停看了好久。</p></div>
+          <div class="cmt"><div class="who"><div class="av">m</div><span class="nick">momo酱</span><span class="stamp">11-06</span></div><p>三叶窗第二篇结尾的雨夜段落，11 分钟，公映版直接切黑我当年在影院愣了半天。现在补回来总算完整了。</p></div>
+          <div class="cmt"><div class="who"><div class="av">林</div><span class="nick">林边散步</span><span class="stamp">11-05</span></div><p>旧电表的即兴台词加了字幕标注，这个做法挺少见。看着看着会留意哪句是剧本哪句是即兴，反而更有意思。</p></div>
+          <div class="cmt"><div class="who"><div class="av">K</div><span class="nick">Kai_打工人</span><span class="stamp">11-04</span></div><p>夜航船的分镜手稿 26 页，我翻完了。被弃用的两个结尾里有一个其实比保留的那个更好，红笔划掉的地方还有点犹豫的痕迹。</p></div>
+          <div class="cmt"><div class="who"><div class="av">小</div><span class="nick">小港夜班迷</span><span class="stamp">11-04</span></div><p>小港夜班便利店交接班那段无对白，只有收银机提示音，我看了两遍。这种段落放公映版里确实容易被剪。</p></div>
+          <div class="cmt"><div class="who"><div class="av">周</div><span class="nick">周记卤味</span><span class="stamp">11-03</span></div><p>胶卷没停 156 分钟，看之前以为会闷，结果 11 次 NG 那段笑出声。片场录音杆穿帮的画面也放进去了，导演没在怕。</p></div>
+          <div class="cmt"><div class="who"><div class="av">b</div><span class="nick">breeze</span><span class="stamp">11-02</span></div><p>片长统计口径这事确实乱。我手里两个版本一个算字幕一个不算，差了两分多钟，对半天才对上。</p></div>
+          <div class="cmt"><div class="who"><div class="av">阿</div><span class="nick">阿美族小米</span><span class="stamp">11-01</span></div><p>修复版年份写错的地方不止一处，2024 扫描 2026 修复，有些页面直接写成 2024 完整版，看着容易误会。</p></div>
+          <div class="cmt"><div class="who"><div class="av">G</div><span class="nick">Gray_睡不醒</span><span class="stamp">10-30</span></div><p>说实话完整版看多了会累。石棺补的那两个镜头，我中途快进了，对白段落太长。</p></div>
+          <div class="cmt"><div class="who"><div class="av">何</div><span class="nick">何同学</span><span class="stamp">10-29</span></div><p>南岸来信片尾影印件我拍下来了，1998 年的家书字迹很淡，能看出改过好几次。</p></div>
+          <div class="cmt"><div class="who"><div class="av">猫</div><span class="nick">猫在码头</span><span class="stamp">10-27</span></div><p>三叶窗的雨夜段落补回来之后，第二篇的结尾逻辑终于通了。之前切黑我一直以为是留白。</p></div>
+          <div class="cmt"><div class="who"><div class="av">苏</div><span class="nick">苏打绿不绿</span><span class="stamp">10-25</span></div><p>今天下雨，适合重看雾港旧事。片头独白配雨声，挺对味。</p></div>
+          <div class="cmt"><div class="who"><div class="av">N</div><span class="nick">Nana_高雄</span><span class="stamp">10-22</span></div><p>潮汐之间音轨重混这事，要不是有人提醒我根本听不出来。耳朵不够用。</p></div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="block" id="news">
+        <div class="block-head"><h2>修复与放映资讯</h2><span class="sub">6 条近期报道</span></div>
+        <div class="news-list">
+          <article class="news-item"><time>2026-11-08</time><div class="txt"><h3>《雾港旧事》4K 修复版完成片头补拍字幕校对</h3><p>校对涉及 7 分钟独白的繁体字幕，修正 3 处方言用字，片尾新增 1990 年代港口货运单据影印件 2 页。</p></div></article>
+          <article class="news-item"><time>2026-11-06</time><div class="txt"><h3>《潮汐之间》导演剪辑版音轨重混完成</h3><p>重混由录音师黄志明操刀，替换 4 段环境声，第 62 分钟后的海浪声改用 2021 年 7 月原址同期录音。</p></div></article>
+          <article class="news-item"><time>2026-11-03</time><div class="txt"><h3>《夜航船》分镜手稿 26 页首次公开</h3><p>手稿标注第 4 篇被弃用的两个结尾，其中一页有导演红笔批注“留待他日”，扫描件附于完整版片尾。</p></div></article>
+          <article class="news-item"><time>2026-10-31</time><div class="txt"><h3>《胶卷没停》新增《雾港旧事》三场戏 NG 记录</h3><p>新增片段长 18 分钟，含 11 次 NG 完整过程，其中一次因码头风大导致录音杆穿帮，片场记录显示重拍 4 次。</p></div></article>
+          <article class="news-item"><time>2026-10-28</time><div class="txt"><h3>《南岸来信》补回两段信件朗读</h3><p>朗读段落合计 8 分钟，信件原文来自导演祖母 1998 年家书，片尾附影印件 5 页，字迹部分需靠红外扫描辨认。</p></div></article>
+          <article class="news-item"><time>2026-10-24</time><div class="txt"><h3>完整版片单新增《小港夜班》《石棺》等 3 部</h3><p>片单由 39 部增至 42 部，新增条目均标注公映版与完整版片长，其中《石棺》差异 9 分钟为段落顺序调整。</p></div></article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="block" id="reco">
+        <div class="block-head"><h2>相关推荐</h2><span class="sub">按内容方向与条目名</span></div>
+        <div class="reco">
+          <a href="/#picks">雾港旧事片头独白</a>
+          <a href="/#picks">潮汐之间同期录音</a>
+          <a href="/#picks">南岸来信家书影印</a>
+          <a href="/#picks">三叶窗雨夜段落</a>
+          <a href="/#picks">夜航船分镜手稿</a>
+          <a href="/#picks">胶卷没停 NG 记录</a>
+          <a href="/#deep">删减段落三种成因</a>
+          <a href="/#guide">片长统计口径</a>
+        </div>
+      </section>
+
+      <!-- 11 热度榜单 -->
+      <section class="block" id="board">
+        <div class="block-head"><h2>条目热度榜单</h2><span class="sub">11-08 更新</span></div>
+        <div class="board">
+          <div class="item"><span class="rk">1</span><div><div class="nm">雾港旧事 · 4K 修复完整版</div><div class="info">热度 9.2k · 评分 8.6</div></div></div>
+          <div class="item"><span class="rk">2</span><div><div class="nm">潮汐之间 · 音轨重混版</div><div class="info">热度 7.4k · 评分 8.1</div></div></div>
+          <div class="item"><span class="rk">3</span><div><div class="nm">三叶窗 · 完整合集</div><div class="info">热度 6.8k · 评分 8.3</div></div></div>
+          <div class="item"><span class="rk">4</span><div><div class="nm">胶卷没停 · 37 小时剪辑版</div><div class="info">热度 6.2k · 评分 8.4</div></div></div>
+          <div class="item"><span class="rk">5</span><div><div class="nm">夜航船 · 分镜手稿版</div><div class="info">热度 5.9k · 评分 8.0</div></div></div>
+          <div class="item"><span class="rk">6</span><div><div class="nm">南岸来信 · 未删节版</div><div class="info">热度 5.1k · 评分 7.9</div></div></div>
+          <div class="item"><span class="rk">7</span><div><div class="nm">小港夜班 · 完整版</div><div class="info">热度 4.8k · 评分 7.7</div></div></div>
+          <div class="item"><span class="rk">8</span><div><div class="nm">旧电表 · 加长版</div><div class="info">热度 4.3k · 评分 7.6</div></div></div>
+        </div>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section class="block" id="submit">
+        <div class="submit-band">
+          <div>
+            <h2>提交完整版线索</h2>
+            <p>手里有未收录的完整版片源、修复记录或分镜手稿，可以按条目名 + 版本号 + 片长三项提交。核对片头标志与片尾字幕后，纳入片单。</p>
+          </div>
+          <a href="/#picks" class="btn">查看提交格式</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="right-rail" aria-label="辅助栏">
+      <div class="rail-card">
+        <h3>更新热度榜</h3>
+        <ol>
+          <li>雾港旧事片头独白</li>
+          <li>潮汐之间音轨重混</li>
+          <li>三叶窗雨夜段落</li>
+          <li>夜航船分镜手稿</li>
+          <li>胶卷没停 NG 记录</li>
+          <li>南岸来信家书影印</li>
+        </ol>
+      </div>
+      <div class="rail-card">
+        <h3>版本关键词</h3>
+        <div class="tagcloud">
+          <a href="/#deep">导演剪辑版</a>
+          <a href="/#deep">4K 修复</a>
+          <a href="/#deep">片头独白</a>
+          <a href="/#deep">音轨重混</a>
+          <a href="/#deep">同期录音</a>
+          <a href="/#deep">删减段落</a>
+          <a href="/#deep">分镜手稿</a>
+          <a href="/#guide">片长差异</a>
+        </div>
+      </div>
+      <div class="rail-card">
+        <h3>片单速览</h3>
+        <ol>
+          <li>雾港旧事 143 分钟</li>
+          <li>潮汐之间 128 分钟</li>
+          <li>南岸来信 117 分钟</li>
+          <li>石棺 131 分钟</li>
+          <li>三叶窗 108 分钟</li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site">
+  <div class="wrap">
+    <div class="top">
+      <div class="brandcol">
+        <div class="logo-line">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2f4a7a"/><path d="M18 44V20l14 12 14-12v24" stroke="#f0b429" stroke-width="5" fill="none" stroke-linejoin="round"/></svg>
+          <span class="bn">台湾辛尤里 完整版</span>
+        </div>
+        <p>收录 2014 年至 2026 年间辛尤里作品的完整版条目，覆盖剧情长片、短片合集与幕后纪录片三类。条目差异标注到具体分钟与段落位置，修复记录以片头出品方标志与片尾字幕长度为核对口径。</p>
+        <p class="upd">最近更新：2026-11-08 ·《雾港旧事》片头独白字幕校对完成</p>
+      </div>
+      <div class="col"><h4>片单</h4><a href="/#picks">剧情长片</a><a href="/#picks">短片合集</a><a href="/#picks">幕后纪录片</a><a href="/#board">热度榜单</a></div>
+      <div class="col"><h4>版本</h4><a href="/#deep">导演剪辑版</a><a href="/#deep">4K 修复版</a><a href="/#deep">音轨重混</a><a href="/#guide">片长差异</a></div>
+      <div class="col"><h4>互动</h4><a href="/#comments">观众评论</a><a href="/#submit">片源投稿</a><a href="/#news">修复资讯</a><a href="/#reco">相关推荐</a></div>
+    </div>
+    <div class="bottom">
+      <span>条目资料为示例内容，版本信息以片头出品方标志与片尾字幕为准。</span>
+      <span>© 2026 台湾辛尤里 完整版 · 内容聚合示例</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  // 移动端菜单
+  var burger=document.getElementById('burger');
+  var nav=document.getElementById('mainnav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'关闭菜单':'打开菜单');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'&&window.innerWidth<=1024){nav.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus();}
+  });
+
+  // 回到顶部
+  var totop=document.getElementById('totop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>window.innerHeight){totop.classList.add('show');}else{totop.classList.remove('show');}
+  },{passive:true});
+  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  // 左侧导航高亮
+  var links=document.querySelectorAll('aside.left-index a');
+  var sections=[];
+  links.forEach(function(a){
+    var id=a.getAttribute('href').split('#')[1];
+    var el=document.getElementById(id);
+    if(el)sections.push({el:el,a:a});
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          var t=sections.find(function(s){return s.el===en.target;});
+          if(t)t.a.classList.add('active');
+        }
+      });
+    },{rootMargin:'-120px 0px -60% 0px',threshold:0});
+    sections.forEach(function(s){io.observe(s.el);});
+  }
+
+  // 站内搜索
+  var input=document.getElementById('siteSearch');
+  var noResult=document.getElementById('noResult');
+  var searchables=document.querySelectorAll('.pick-card h3, .pick-card .desc, .updates .name, .updates .note, .news-item h3, .board .nm, .cat-item .nm');
+  input.addEventListener('input',function(){
+    var q=input.value.trim().toLowerCase();
+    if(!q){noResult.style.display='none';document.querySelectorAll('.pick-card,.updates .row,.news-item,.board .item,.cat-item').forEach(function(el){el.style.display='';});return;}
+    var hit=0;
+    document.querySelectorAll('.pick-card').forEach(function(card){
+      var txt=card.textContent.toLowerCase();
+      var show=txt.indexOf(q)>-1;
+      card.style.display=show?'':'none';
+      if(show)hit++;
+    });
+    document.querySelectorAll('.updates .row').forEach(function(row){
+      var show=row.textContent.toLowerCase().indexOf(q)>-1;
+      row.style.display=show?'':'none';
+      if(show)hit++;
+    });
+    document.querySelectorAll('.news-item').forEach(function(it){
+      var show=it.textContent.toLowerCase().indexOf(q)>-1;
+      it.style.display=show?'':'none';
+      if(show)hit++;
+    });
+    document.querySelectorAll('.board .item').forEach(function(it){
+      var show=it.textContent.toLowerCase().indexOf(q)>-1;
+      it.style.display=show?'':'none';
+      if(show)hit++;
+    });
+    document.querySelectorAll('.cat-item').forEach(function(it){
+      var show=it.textContent.toLowerCase().indexOf(q)>-1;
+      it.style.display=show?'':'none';
+      if(show)hit++;
+    });
+    noResult.style.display=hit?'none':'block';
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"台湾辛尤里 完整版",
+  "description":"聚合辛尤里作品完整版条目、片长差异、删减段落说明与修复版本信息。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"《雾港旧事》完整版多出的 7 分钟片头独白讲了什么？","acceptedAnswer":{"@type":"Answer","text":"独白由陈以文以第一人称念出，交代主线之外的父亲旧账线索，涉及 1990 年代港口货运的一笔欠款。2019 年拍摄时已录好，因方言台词未过关被剪，2026 年 10 月修复时补回。"}},
+    {"@type":"Question","name":"《潮汐之间》完整版和公映版片长一样，差在哪？","acceptedAnswer":{"@type":"Answer","text":"差在音轨。公映版第 62 分钟起的环境声来自音效库，授权到期后无法续用；完整版换成原址同期录音，海浪声里能听到远处渔船的马达。"}},
+    {"@type":"Question","name":"《石棺》完整版多出的 9 分钟是一整段戏吗？","acceptedAnswer":{"@type":"Answer","text":"不是一整段。多出的是采石场对峙戏中的两个镜头，被拆开插回原位置，单个镜头最短 21 秒、最长 3 分 40 秒，中间隔着原有对白段落。"}},
+    {"@type":"Question","name":"《夜航船》片尾附的分镜手稿有多少页？","acceptedAnswer":{"@type":"Answer","text":"26 页扫描件，标注了第 4 篇被弃用的两个结尾，完整版只保留其中一个，另一个结尾的手稿也在扫描件里。"}},
+    {"@type":"Question","name":"《胶卷没停》里的 37 小时素材是全部公开了吗？","acceptedAnswer":{"@type":"Answer","text":"没有全部公开。156 分钟成片从 2019 年 3 月至 6 月的 37 小时素材中剪出，公开的是剪辑版，原始素材未完整放出。"}},
+    {"@type":"Question","name":"怎么判断手里的是公映版还是完整版？","acceptedAnswer":{"@type":"Answer","text":"两步核对：先看片头出品方标志出现到片尾字幕结束的时长，与对照表比对；再听第 62 分钟前后的环境声是否为同期录音。"}}
+  ]
+}
+</script>
+
+</body>
+  </html>
